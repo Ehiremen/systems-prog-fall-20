@@ -41,7 +41,7 @@ public:
     Sniff(Params& params);
     void oneDir();
     FileID oneFile();
-    
+    void run(string startingDir);
     void print( ostream& out );
 
 };

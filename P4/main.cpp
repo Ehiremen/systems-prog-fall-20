@@ -16,13 +16,14 @@ using namespace std;
 int main (int argc, char* argv[]) {
     banner();
     
-    cerr << "\tWelcome to our sniffer!" << endl << endl;
+    std::cerr << "\tWelcome to our sniffer!" << endl << endl;
     
     Params p = Params(argc, argv);
     Sniff sniff = Sniff(p);
-    chdir(p.getStartingDirectory());
-    sniff.oneDir();
-    sniff.print(cout);
+    sniff.run(p.getStartingDirectory());
+//    chdir(p.getStartingDirectory());
+//    sniff.oneDir();
+//    sniff.print(cout);
     
     bye();
     return 0;

@@ -145,3 +145,9 @@ vector<string> Sniff::searchWord (string word, bool isCaseSensitive) {
     }
     return out;
 }
+
+// -----------------------------------------------------------------------------
+
+void Sniff::run(string startingDir) {
+    
+}
