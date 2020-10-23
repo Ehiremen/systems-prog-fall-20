@@ -88,6 +88,5 @@ DerivedData/
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
-# *.xcodeproj
 
 # End of https://www.toptal.com/developers/gitignore/api/c++,xcode
