@@ -1,0 +1,145 @@
+Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
+	Verbose? No
+	Case insensitive? Yes
+	Recursive? No
+	Output file name: found.txt
+	Directory? ../dir
+	Searching for: CSCI Banana boat glitter 
+
+---------------------------------------------------------------
+	Ehis and Jenny
+	CSCI 4547
+	Sun Oct 11 2020	02:35:23
+---------------------------------------------------------------
+	Welcome to our sniffer!
+
+Params instance successfully created
+Sniff initialized
+
+cwd: /Users/ehis/Documents/UNH/20 Fall/Systems/Programs/dir
+	New FileID created
+	done processing file2.txt
+
+	New FileID created
+	done processing file3.txt
+
+	New FileID created
+	done processing file1.txt
+
+	New FileID created
+	done processing .DS_Store
+
+	Skipped directory: test
+	done processing test
+
+	New FileID created
+	done processing linkFile1
+
+Suspicious files:
+	iNode Num	File name
+	15415362	../dir/file2.txt
+	15425363	../dir/file3.txt
+	15415258	../dir/file1.txt
+	15415258	../dir/linkFile1
+
+
+---------------------------------------------------------------
+Normal termination.
+
+###############################################################
+
+Command: findit -ofound.txt -d ../dir CSCI Banana boat glitter 
+	Verbose? No
+	Case insensitive? No
+	Recursive? No
+	Output file name: found.txt
+	Directory? ../dir
+	Searching for: CSCI Banana boat glitter 
+
+---------------------------------------------------------------
+	Ehis and Jenny
+	CSCI 4547
+	Sun Oct 11 2020	02:36:52
+---------------------------------------------------------------
+	Welcome to our sniffer!
+
+Params instance successfully created
+Sniff initialized
+
+cwd: /Users/ehis/Documents/UNH/20 Fall/Systems/Programs/dir
+	New FileID created
+	done processing file2.txt
+
+	New FileID created
+	done processing file3.txt
+
+	New FileID created
+	done processing file1.txt
+
+	New FileID created
+	done processing .DS_Store
+
+	Skipped directory: test
+	done processing test
+
+	New FileID created
+	done processing linkFile1
+
+Suspicious files:
+	iNode Num	File name
+	15415258	../dir/file1.txt
+	15415258	../dir/linkFile1
+
+
+---------------------------------------------------------------
+Normal termination.
+
+###############################################################
+
+Command: findit --verbose -ofound.txt -d ../dir water 
+	Verbose? Yes
+	Case insensitive? No
+	Recursive? No
+	Output file name: found.txt
+	Directory? ../dir
+	Searching for: water 
+
+---------------------------------------------------------------
+	Ehis and Jenny
+	CSCI 4547
+	Sun Oct 11 2020	02:38:30
+---------------------------------------------------------------
+	Welcome to our sniffer!
+
+Params instance successfully created
+Sniff initialized
+
+cwd: /Users/ehis/Documents/UNH/20 Fall/Systems/Programs/dir
+name: file2.txt
+	New FileID created
+	done processing file2.txt
+
+name: file3.txt
+	New FileID created
+	done processing file3.txt
+
+name: file1.txt
+	New FileID created
+	done processing file1.txt
+
+name: .DS_Store
+	New FileID created
+	done processing .DS_Store
+
+name: test
+	Skipped directory: test
+	done processing test
+
+name: linkFile1
+	New FileID created
+	done processing linkFile1
+
+No suspicious files found
+
+
+---------------------------------------------------------------

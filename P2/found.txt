@@ -1,0 +1,46 @@
+Command: findit --verbose -ofound.txt --dir /Users/ehis/Systems CSCI 
+	Verbose? Yes
+	Case insensitive? No
+	Recursive? No
+	Output file name: found.txt
+	Directory? /Users/ehis/Systems
+	Searching for: CSCI 
+
+Command: findit -i -R --verbose -ofound.txt -d /Users/ehis/Systems CSCI 
+	Verbose? Yes
+	Case insensitive? Yes
+	Recursive? Yes
+	Output file name: found.txt
+	Directory? /Users/ehis/Systems
+	Searching for: CSCI 
+
+Command: findit -ofound.txt -d /Users/ehis/Systems CSCI Banana boat glitter 
+	Verbose? No
+	Case insensitive? No
+	Recursive? No
+	Output file name: found.txt
+	Directory? /Users/ehis/Systems
+	Searching for: CSCI Banana boat glitter 
+
+====================== Console output, pasted manually ======================
+[ehis] lexy:~/<3>Systems/Programs/P2~> findit -d ~/Systems "Console output"
+
+---------------------------------------------------------------
+	Ehis and Jenny
+	CSCI 4547
+	Tue Sep 29 2020	05:49:27
+---------------------------------------------------------------
+Params instance successfully created
+Command: findit -d /Users/ehis/Systems Console output 
+	Verbose? No
+	Case insensitive? No
+	Recursive? No
+	Outputting to: Console screen
+	Directory? /Users/ehis/Systems
+	Searching for: /Users/ehis/Systems Console output 
+
+
+---------------------------------------------------------------
+Normal termination.
+
+

@@ -1,0 +1,30 @@
+total 120
+-rw-rw-r--  1 ehis  staff      0 Sep  8 01:16 P1_Ekore.txt
+-rw-rw-r--  1 ehis  staff      0 Sep  8 01:15 dummy_one.bak
+-rw-rw-r--  1 ehis  staff      0 Sep  8 01:15 dummy_two.bak
+-rwxrw-r--  1 ehis  staff  57136 Sep  8 01:10 ehisP1
+-rw-r--r--@ 1 ehis  staff   1287 Sep  8 01:09 p1.cpp
+------------------------------------------------------------
+command   ehisP1
+------------------------------------------------------------
+command   ehisP1
+switch    o
+argument  myCommand
+argument  myMain.c
+argument  myClass.c
+------------------------------------------------------------
+command   ehisP1
+argument  w/java
+argument  bash-3.2
+argument  ls
+switch    l
+------------------------------------------------------------
+command   ehisP1
+switch    au
+switch    -verbose
+argument  w/java/
+argument  kira:w/java/
+------------------------------------------------------------
+command   ehisP1
+argument  dummy_one.bak
+argument  dummy_two.bak
