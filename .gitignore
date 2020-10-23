@@ -5,10 +5,8 @@
 .DS_STORE
 
 
-
-
-# Created by https://www.toptal.com/developers/gitignore/api/c++,xcode
-# Edit at https://www.toptal.com/developers/gitignore?templates=c++,xcode
+# Created by https://www.toptal.com/developers/gitignore/api/c++,xcode,executables
+# Edit at https://www.toptal.com/developers/gitignore?templates=c++,xcode,executables
 
 ### Executable ###
 *.app
