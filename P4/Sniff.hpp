@@ -42,6 +42,7 @@ public:
     void oneDir();
     FileID oneFile();
     void run(string startingDir);
+    void travel(string path, string nextDir);
     void print( ostream& out );
 
 };

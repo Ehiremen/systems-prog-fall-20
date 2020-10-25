@@ -12,6 +12,7 @@ Sniff::Sniff(Params& params) : params(params) {
     params.print();
     firstSearchDirectory = params.getStartingDirectory();
     dirPathName = firstSearchDirectory;
+    chdir(params.getStartingDirectory());
     
     istringstream searchWords(params.getWords());
     
@@ -96,7 +97,7 @@ FileID Sniff::oneFile() {
     thisFile.open(currentFile.getName());
     
     if (!thisFile) {
-        cerr << "\t" << currentFile.getName() << "is empty\n";
+        cerr << "\t" << currentFile.getName() << " is empty\n";
     }
     else {
         string currentWord, alphaChars, wordToCheck;
@@ -149,5 +150,12 @@ vector<string> Sniff::searchWord (string word, bool isCaseSensitive) {
 // -----------------------------------------------------------------------------
 
 void Sniff::run(string startingDir) {
+//    travel(".", ".");
+    oneDir();
+}
+
+// -----------------------------------------------------------------------------
+
+void Sniff::travel(string path, string nextDir){
     
 }
