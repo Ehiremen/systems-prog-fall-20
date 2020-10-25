@@ -8,9 +8,9 @@
 
 #include "FileID.hpp"
 
-FileID::FileID (string name, int nodeNumber, string path) {
-    fileName = name;
-    pathnameRelToStartDir = path + "/" + name;
+FileID::FileID (string fileName, int nodeNumber, string path) {
+    fileName = fileName;
+    pathnameRelToStartDir = path + "/" + fileName;
     iNodeNumber = nodeNumber;
     
     cerr << "\tNew FileID created" << endl;
@@ -19,7 +19,12 @@ FileID::FileID (string name, int nodeNumber, string path) {
 // -----------------------------------------------------------------------------
 
 void FileID::print( ostream& out) {
-    out << "\t" << iNodeNumber << "\t" << pathnameRelToStartDir << endl;
+//    out << "\t" << iNodeNumber << "\t" << pathnameRelToStartDir << endl;
+    out << endl << "found " << foundSniffWords.size() << "words in ";
+    out <<pathnameRelToStartDir << endl;
+    
+    for (string word: foundSniffWords) out << word << " ";
+    out << endl;
 }
 
 // -----------------------------------------------------------------------------
