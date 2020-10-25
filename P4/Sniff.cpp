@@ -25,6 +25,12 @@ Sniff::Sniff(Params& params) : params(params) {
     // remove duplicates from words vector
     words.resize(distance(words.begin(), unique(words.begin(), words.end())));
     
+    
+    // populate all alpha chars
+    alphaChars = "";
+    for(int k=0; k<26; ++k) { alphaChars += ('a' + k);}
+    for(int k=0; k<26; ++k) { alphaChars += ('A' + k);}
+    
     cerr << "Sniff initialized" << endl;
 }
 
@@ -98,12 +104,9 @@ FileID Sniff::oneFile() {
     if (!thisFile) {
         cerr << "\t" << currentFile.getName() << "is empty\n";
     }
+    
     else {
-        string currentWord, alphaChars, wordToCheck;
-        
-        // populate all alpha chars
-        for(int k=0; k<26; ++k) { alphaChars += ('a' + k);}
-        for(int k=0; k<26; ++k) { alphaChars += ('A' + k);}
+        string currentWord, wordToCheck;
         
         // read file till eof
         while(!thisFile.eof()) {
