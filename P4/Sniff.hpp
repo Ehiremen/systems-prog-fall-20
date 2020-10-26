@@ -23,8 +23,8 @@ private:
     vector<string> words;
     vector<FileID> suspiciousFiles;
     
-    DIR *dir;
-    struct dirent *currentDirEntry;
+//    DIR *dir;
+//    struct dirent *currentDirEntry;
     
     vector<string> searchWord (string word, bool isCaseSensitive);
     /*
@@ -40,7 +40,7 @@ private:
 public:
     Sniff(Params& params);
     void oneDir();
-    FileID oneFile();
+    FileID oneFile(struct dirent *currentDirEntry);
     void run(string startingDir);
     void travel(string path, string nextDir);
     void print( ostream& out );

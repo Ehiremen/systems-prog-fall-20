@@ -13,7 +13,7 @@ FileID::FileID (string name, int nodeNumber, string path) {
     pathnameRelToStartDir = path + "/" + name;
     iNodeNumber = nodeNumber;
     
-    cerr << "\tNew FileID created" << endl;
+    cerr << "\tNew FileID created for: " << pathnameRelToStartDir << endl;
 }
 
 // -----------------------------------------------------------------------------

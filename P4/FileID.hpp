@@ -24,5 +24,8 @@ public:
     void print( ostream& out);
     void insertFoundWord (string& word);
     int countFoundWords() { return foundSniffWords.size(); }
-    string getName() { return fileName; }
+    
+    // ifstream.open() fails if only fileName is used as name.
+    // this is why we are using the name relative to starting directory
+    string getName() { return pathnameRelToStartDir; }
 };
