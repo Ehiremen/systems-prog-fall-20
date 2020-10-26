@@ -20,7 +20,7 @@ private:
     vector<string> foundSniffWords;
     
 public:
-    FileID (string name, int nodeNumber, string path);
+    FileID (string fileName, int nodeNumber, string path);
     void print( ostream& out);
     void insertFoundWord (string& word);
     int countFoundWords() { return foundSniffWords.size(); }
