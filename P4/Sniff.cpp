@@ -10,8 +10,10 @@
 
 Sniff::Sniff(Params& params) : params(params) {
     params.print();
-    firstSearchDirectory = params.getStartingDirectory();
-    dirPathName = firstSearchDirectory;
+//    firstSearchDirectory = params.getStartingDirectory();
+//    chdir(params.getStartingDirectory());
+    startingPath = ".";
+    currentDirName = ".";
     
     istringstream searchWords(params.getWords());
     
@@ -25,7 +27,7 @@ Sniff::Sniff(Params& params) : params(params) {
     // remove duplicates from words vector
     words.resize(distance(words.begin(), unique(words.begin(), words.end())));
     
-    
+
     // populate all alpha chars
     alphaChars = "";
     for(int k=0; k<26; ++k) { alphaChars += ('a' + k);}
@@ -50,12 +52,15 @@ void Sniff::print( ostream& out ) {
 }
 
 // -----------------------------------------------------------------------------
-
+/*
 void Sniff::oneDir() {
-    if ((dir = opendir(params.getStartingDirectory())) == NULL) {
-        cerr << "Unable to open starting directory \n";
-        return;
+    if ((dir = opendir(".")) == NULL) {
+        cerr << "Unable to open dir\n";
     }
+//    if ((dir = opendir(params.getStartingDirectory())) == NULL) {
+//        cerr << "Unable to open starting directory \n";
+//        return;
+//    }
     // change the below to show RELATIVE path, not absolute path
     string cwd = getcwd(NULL, 0);
     cerr << "\ncwd: " << cwd << endl;
@@ -65,11 +70,12 @@ void Sniff::oneDir() {
     currentDirEntry = readdir(dir); // discard ..
     
     while ((currentDirEntry = readdir(dir)) != NULL) {
+        // discard entry if not regular file or directory
         if ((currentDirEntry->d_type != DT_REG) && (currentDirEntry->d_type != DT_DIR)) {
-            // discard if not regular file or directory
             continue;
         }
         
+        // echo entry's name if verbatim switch is on
         if (params.isVerbatim()) {
             cerr << "\rname: " << currentDirEntry->d_name << endl;
         }
@@ -92,17 +98,17 @@ void Sniff::oneDir() {
     
     closedir(dir);
 }
-
+*/
 // -----------------------------------------------------------------------------
 
-FileID Sniff::oneFile() {
-    FileID currentFile = FileID(currentDirEntry->d_name, currentDirEntry->d_ino, dirPathName);
+FileID Sniff::oneFile(struct dirent *currentDirEntry) {
+    FileID currentFile = FileID(currentDirEntry->d_name, currentDirEntry->d_ino, startingPath);
     
     ifstream thisFile;
     thisFile.open(currentFile.getName());
     
     if (!thisFile) {
-        cerr << "\t" << currentFile.getName() << "is empty\n";
+        cerr << "\t" << currentFile.getName() << " is empty\n";
     }
     
     else {
@@ -127,9 +133,9 @@ FileID Sniff::oneFile() {
 // -----------------------------------------------------------------------------
 
 vector<string> Sniff::searchWord (string word, bool isCaseSensitive) {
-    if (word.empty()) return {};
-    
     vector<string> out;
+    
+    if (word.empty()) return out;
     
     if (!isCaseSensitive) { transform(word.begin(), word.end(), word.begin(), ::tolower); }
     
@@ -152,5 +158,68 @@ vector<string> Sniff::searchWord (string word, bool isCaseSensitive) {
 // -----------------------------------------------------------------------------
 
 void Sniff::run(string startingDir) {
+    cerr << "\nParam passed: " << startingDir << endl;
+    cerr << "\nbefore chdir, cwd: " << getcwd(NULL, 0) << endl;
     
+    chdir(startingDir.c_str());
+    
+    cerr << "\nafter chdir, cwd: " << getcwd(NULL, 0) << endl;
+    
+    startingPath = ".";     // at this point, "." is the simple name of
+    currentDirName = ".";   // whatever directory we are currently in
+   
+    travel(startingPath, currentDirName);
+    print(cout);
+}
+
+// -----------------------------------------------------------------------------
+
+void Sniff::travel(string path, string nextDir){
+    DIR *dir;
+    struct dirent *currentDirEntry;
+    
+    if ((dir = opendir(path.c_str())) == NULL) {
+        cerr << "Unable to open dir " << nextDir << endl;
+        return;
+    }
+    
+    currentDirName = nextDir;
+    startingPath = path;
+    
+    currentDirEntry = readdir(dir); // discard .
+    currentDirEntry = readdir(dir); // discard ..
+    
+    while ((currentDirEntry = readdir(dir)) != NULL) {
+        
+        // discard entry if not regular file or directory
+        if ((currentDirEntry->d_type != DT_REG) && (currentDirEntry->d_type != DT_DIR)) {
+            continue;
+        }
+        
+        // skip .DS_Store file
+        if (strcmp(currentDirEntry->d_name, ".DS_Store") == 0) continue;
+        
+        // echo entry's name if verbatim switch is on
+        if (params.isVerbatim()) {
+            cerr << "\nname: " << currentDirEntry->d_name << endl;
+        }
+        
+        // recursively handle directories
+        if (currentDirEntry->d_type == DT_DIR) {
+            cerr << "\tEntering directory: " << currentDirEntry->d_name << endl;
+            travel(path + "/" + currentDirEntry->d_name, currentDirEntry->d_name);
+        }
+        
+        // handle regular file
+        if (currentDirEntry->d_type == DT_REG) {
+            FileID tempFile = oneFile(currentDirEntry);
+            if (tempFile.countFoundWords() > 0) {
+                suspiciousFiles.push_back(tempFile);
+            }
+        }
+        
+        cerr << "\tdone processing " << currentDirEntry->d_name << endl << endl;
+    }
+    
+    closedir(dir);
 }

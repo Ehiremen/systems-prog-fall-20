@@ -1,10 +1,10 @@
-Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
-	Verbose? No
+Command: dev -ofound.txt -i --verbose -d ../dir CSCI Banana boat glitter i 
+	Verbose? Yes
 	Case insensitive? Yes
 	Recursive? No
 	Output file name: found.txt
 	Directory? ../dir
-	Searching for: CSCI Banana boat glitter 
+	Searching for: CSCI Banana boat glitter i 
 
 Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
 	Verbose? No
@@ -12,37 +12,5 @@ Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter
 	Recursive? No
 	Output file name: found.txt
 	Directory? ../dir
-	Searching for: CSCI Banana boat glitter 
-
-Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
-	Verbose? No
-	Case insensitive? Yes
-	Recursive? No
-	Output file name: found.txt
-	Directory? ../dir
-	Searching for: CSCI Banana boat glitter 
-
-Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
-	Verbose? No
-	Case insensitive? Yes
-	Recursive? No
-	Output file name: found.txt
-	Directory? ../dir
-	Searching for: CSCI Banana boat glitter 
-
-Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
-	Verbose? No
-	Case insensitive? Yes
-	Recursive? No
-	Output file name: found.txt
-	Directory? ../dir
-	Searching for: CSCI Banana boat glitter 
-
-Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
-	Verbose? No
-	Case insensitive? Yes
-	Recursive? No
-	Output file name: found.txt
-	Directory? ../dir
-	Searching for: CSCI Banana boat glitter 
+	Searching for: CSCI Banana boat glitter
 

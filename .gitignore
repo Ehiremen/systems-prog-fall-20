@@ -1,9 +1,11 @@
 # ignore zip files
 *.zip
 
-#ignore .DS_STORE
+# ignore .DS_STORE
 .DS_STORE
 
+# other dev files to ignore
+*.dSYM
 
 # Created by https://www.toptal.com/developers/gitignore/api/c++,xcode,executables
 # Edit at https://www.toptal.com/developers/gitignore?templates=c++,xcode,executables

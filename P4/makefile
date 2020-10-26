@@ -1,5 +1,5 @@
 # Go to dir with project in terminal and run:
-#	c++ -MM *.c >> makefile
+#	c++ -MM *.cpp >> makefile
 
 # Compile with debug option and all warnings on. ------------
 CXX = c++
