@@ -44,8 +44,9 @@ void Sniff::print( ostream& out ) {
     }
     
     else {
-        out << "Suspicious files:" << endl;
-        out << "\tiNode Num" << "\tFile name" << endl;
+        for (int k=0; k<60; k++) out << "=";
+        out << "\n\t\tSNIFFER RESULTS\n";
+        for (int k=0; k<60; k++) out << "=";
         for (FileID fID: suspiciousFiles) { fID.print(out); }
         out << endl;
     }
@@ -201,7 +202,7 @@ void Sniff::travel(string path, string nextDir){
         
         // echo entry's name if verbatim switch is on
         if (params.isVerbatim()) {
-            cerr << "\nname: " << currentDirEntry->d_name << endl;
+            cerr << "\rname: " << currentDirEntry->d_name << endl;
         }
         
         // recursively handle directories

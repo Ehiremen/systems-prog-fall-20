@@ -9,7 +9,7 @@
 #include "FileID.hpp"
 
 FileID::FileID (string fileName, int nodeNumber, string path) {
-    fileName = fileName;
+    this->fileName = fileName;
     pathnameRelToStartDir = path + "/" + fileName;
     iNodeNumber = nodeNumber;
     
@@ -20,7 +20,7 @@ FileID::FileID (string fileName, int nodeNumber, string path) {
 
 void FileID::print( ostream& out) {
 //    out << "\t" << iNodeNumber << "\t" << pathnameRelToStartDir << endl;
-    out << endl << "found " << foundSniffWords.size() << "words in ";
+    out << endl << "found " << foundSniffWords.size() << " word(s) in ";
     out <<pathnameRelToStartDir << endl;
     
     for (string word: foundSniffWords) out << word << " ";
