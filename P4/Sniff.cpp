@@ -27,6 +27,10 @@ Sniff::Sniff(Params& params) : params(params) {
     // remove duplicates from words vector
     words.resize(distance(words.begin(), unique(words.begin(), words.end())));
     
+    // populate all alpha chars
+    for(int k=0; k<26; ++k) { alphaChars += ('a' + k);}
+    for(int k=0; k<26; ++k) { alphaChars += ('A' + k);}
+    
     cerr << "Sniff initialized" << endl;
 }
 
@@ -105,11 +109,8 @@ FileID Sniff::oneFile(struct dirent *currentDirEntry) {
         cerr << "\t" << currentFile.getName() << " is empty\n";
     }
     else {
-        string currentWord, alphaChars, wordToCheck;
+        string currentWord, wordToCheck;
         
-        // populate all alpha chars
-        for(int k=0; k<26; ++k) { alphaChars += ('a' + k);}
-        for(int k=0; k<26; ++k) { alphaChars += ('A' + k);}
         
         // read file till eof
         while(!thisFile.eof()) {
@@ -134,7 +135,6 @@ vector<string> Sniff::searchWord (string word, bool isCaseSensitive) {
     
     if (word.empty()) return out;
     
-    
     if (!isCaseSensitive) { transform(word.begin(), word.end(), word.begin(), ::tolower); }
     
     for (string s: words) {
@@ -156,25 +156,23 @@ vector<string> Sniff::searchWord (string word, bool isCaseSensitive) {
 // -----------------------------------------------------------------------------
 
 void Sniff::run(string startingDir) {
-    startingPath = ".";
-    currentDirName = ".";
-    
-    cerr << "\n param passed: " << startingDir << endl;
-    cerr << "\nbefore, cwd: " << getcwd(NULL, 0) << endl;
+    cerr << "\nParam passed: " << startingDir << endl;
+    cerr << "\nbefore chdir, cwd: " << getcwd(NULL, 0) << endl;
     
     chdir(startingDir.c_str());
     
-    cerr << "\nafter, cwd: " << getcwd(NULL, 0) << endl;
+    cerr << "\nafter chdir, cwd: " << getcwd(NULL, 0) << endl;
     
-    travel(startingPath, currentDirName); // this replaces oneDir below
-//    oneDir();
+    startingPath = ".";     // at this point, "." is the simple name of
+    currentDirName = ".";   // whatever directory we are currently in
+   
+    travel(startingPath, currentDirName);
     print(cout);
 }
 
 // -----------------------------------------------------------------------------
 
 void Sniff::travel(string path, string nextDir){
-//    chdir(nextDir.c_str());
     DIR *dir;
     struct dirent *currentDirEntry;
     
@@ -190,6 +188,7 @@ void Sniff::travel(string path, string nextDir){
     currentDirEntry = readdir(dir); // discard ..
     
     while ((currentDirEntry = readdir(dir)) != NULL) {
+        
         // discard entry if not regular file or directory
         if ((currentDirEntry->d_type != DT_REG) && (currentDirEntry->d_type != DT_DIR)) {
             continue;
@@ -200,10 +199,10 @@ void Sniff::travel(string path, string nextDir){
         
         // echo entry's name if verbatim switch is on
         if (params.isVerbatim()) {
-            cerr << "\rname: " << currentDirEntry->d_name << endl;
+            cerr << "\nname: " << currentDirEntry->d_name << endl;
         }
         
-        // handle directories
+        // recursively handle directories
         if (currentDirEntry->d_type == DT_DIR) {
             cerr << "\tEntering directory: " << currentDirEntry->d_name << endl;
             travel(path + "/" + currentDirEntry->d_name, currentDirEntry->d_name);
@@ -216,12 +215,9 @@ void Sniff::travel(string path, string nextDir){
                 suspiciousFiles.push_back(tempFile);
             }
         }
-//        travel(path + "/" + currentDirEntry->d_name, currentDirEntry->d_name);
         
         cerr << "\tdone processing " << currentDirEntry->d_name << endl << endl;
     }
     
     closedir(dir);
-    
-//    chdir("..");
 }

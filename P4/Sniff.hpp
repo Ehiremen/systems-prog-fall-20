@@ -22,6 +22,7 @@ private:
     string currentDirName;
     vector<string> words;
     vector<FileID> suspiciousFiles;
+    string alphaChars;
     
 //    DIR *dir;
 //    struct dirent *currentDirEntry;
