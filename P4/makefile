@@ -5,14 +5,11 @@
 CXX = c++
 CXXFLAGS = -std=c++14 -g -Wall -O1
 
-# for dev/debugging, compile with address/memory sanitizer
-ASAN_FLAGS = -fsanitize=address -fno-omit-frame-pointer
-
 # Object modules comprising this application ----------------
 OBJ = main.o FileID.o Params.o Sniff.o tools.o
 
 # Build targets
-TARGETS = findit findit_dev
+TARGETS = findit
 
 # .PHONY: means that the targets that follow should be built even 
 # though the are not real files.
@@ -21,9 +18,6 @@ all: $(TARGETS)
 
 findit: $(OBJ)
 	$(CXX)  -o $@ $(CXXFLAGS) $(OBJ)
-
-findit_dev: $(OBJ)
-	$(CXX)  -o $@ $(CXXFLAGS) $(OBJ) $(ASAN_FLAGS)
 
 # Delete .o and exe files and force recompilation. ----------
 clean:
