@@ -10,9 +10,10 @@
 
 Sniff::Sniff(Params& params) : params(params) {
     params.print();
-    firstSearchDirectory = params.getStartingDirectory();
-    dirPathName = firstSearchDirectory;
-    chdir(params.getStartingDirectory());
+//    firstSearchDirectory = params.getStartingDirectory();
+//    chdir(params.getStartingDirectory());
+    startingPath = ".";
+    currentDirName = ".";
     
     istringstream searchWords(params.getWords());
     
@@ -47,10 +48,13 @@ void Sniff::print( ostream& out ) {
 // -----------------------------------------------------------------------------
 
 void Sniff::oneDir() {
-    if ((dir = opendir(params.getStartingDirectory())) == NULL) {
-        cerr << "Unable to open starting directory \n";
-        return;
+    if ((dir = opendir(".")) == NULL) {
+        cerr << "Unable to open dir\n";
     }
+//    if ((dir = opendir(params.getStartingDirectory())) == NULL) {
+//        cerr << "Unable to open starting directory \n";
+//        return;
+//    }
     // change the below to show RELATIVE path, not absolute path
     string cwd = getcwd(NULL, 0);
     cerr << "\ncwd: " << cwd << endl;
@@ -60,11 +64,12 @@ void Sniff::oneDir() {
     currentDirEntry = readdir(dir); // discard ..
     
     while ((currentDirEntry = readdir(dir)) != NULL) {
+        // discard entry if not regular file or directory
         if ((currentDirEntry->d_type != DT_REG) && (currentDirEntry->d_type != DT_DIR)) {
-            // discard if not regular file or directory
             continue;
         }
         
+        // echo entry's name if verbatim switch is on
         if (params.isVerbatim()) {
             cerr << "\rname: " << currentDirEntry->d_name << endl;
         }
@@ -91,7 +96,7 @@ void Sniff::oneDir() {
 // -----------------------------------------------------------------------------
 
 FileID Sniff::oneFile() {
-    FileID currentFile = FileID(currentDirEntry->d_name, currentDirEntry->d_ino, dirPathName);
+    FileID currentFile = FileID(currentDirEntry->d_name, currentDirEntry->d_ino, currentDirName);
     
     ifstream thisFile;
     thisFile.open(currentFile.getName());
@@ -150,8 +155,19 @@ vector<string> Sniff::searchWord (string word, bool isCaseSensitive) {
 // -----------------------------------------------------------------------------
 
 void Sniff::run(string startingDir) {
-//    travel(".", ".");
+    startingPath = ".";
+    currentDirName = ".";
+    
+    cerr << "\n param passed: " << startingDir << endl;
+    cerr << "\nbefore, cwd: " << getcwd(NULL, 0) << endl;
+    
+    chdir(startingDir.c_str());
+    
+    cerr << "\nafter, cwd: " << getcwd(NULL, 0) << endl;
+    
     oneDir();
+    print(cout);
+    
 }
 
 // -----------------------------------------------------------------------------

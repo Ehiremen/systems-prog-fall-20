@@ -18,8 +18,8 @@
 class Sniff {
 private:
     Params params;
-    string firstSearchDirectory;
-    string dirPathName;
+    string startingPath;
+    string currentDirName;
     vector<string> words;
     vector<FileID> suspiciousFiles;
     

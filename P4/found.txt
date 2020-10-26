@@ -30,3 +30,75 @@ Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter
 	Directory? ../dir
 	Searching for: CSCI Banana boat glitter 
 
+Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
+	Verbose? No
+	Case insensitive? Yes
+	Recursive? No
+	Output file name: found.txt
+	Directory? ../dir
+	Searching for: CSCI Banana boat glitter 
+
+Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
+	Verbose? No
+	Case insensitive? Yes
+	Recursive? No
+	Output file name: found.txt
+	Directory? ../dir
+	Searching for: CSCI Banana boat glitter 
+
+Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
+	Verbose? No
+	Case insensitive? Yes
+	Recursive? No
+	Output file name: found.txt
+	Directory? ../dir
+	Searching for: CSCI Banana boat glitter 
+
+Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
+	Verbose? No
+	Case insensitive? Yes
+	Recursive? No
+	Output file name: found.txt
+	Directory? ../dir
+	Searching for: CSCI Banana boat glitter 
+
+Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
+	Verbose? No
+	Case insensitive? Yes
+	Recursive? No
+	Output file name: found.txt
+	Directory? ../dir
+	Searching for: CSCI Banana boat glitter 
+
+Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
+	Verbose? No
+	Case insensitive? Yes
+	Recursive? No
+	Output file name: found.txt
+	Directory? ../dir
+	Searching for: CSCI Banana boat glitter 
+
+Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
+	Verbose? No
+	Case insensitive? Yes
+	Recursive? No
+	Output file name: found.txt
+	Directory? ../dir
+	Searching for: CSCI Banana boat glitter 
+
+Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
+	Verbose? No
+	Case insensitive? Yes
+	Recursive? No
+	Output file name: found.txt
+	Directory? ../dir
+	Searching for: CSCI Banana boat glitter 
+
+Command: findit -ofound.txt -i -d ../dir CSCI Banana boat glitter 
+	Verbose? No
+	Case insensitive? Yes
+	Recursive? No
+	Output file name: found.txt
+	Directory? ../dir
+	Searching for: CSCI Banana boat glitter 
+
