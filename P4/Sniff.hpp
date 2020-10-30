@@ -23,7 +23,8 @@ private:
     vector<string> words;
     vector<FileID> suspiciousFiles;
     string alphaChars;
-    const string tab = "    ";
+    const string tab = "    "; // explicitly setting my tabs to 4 spaces
+    ostream& myOutStream;
     
 //    DIR *dir;
 //    struct dirent *currentDirEntry;

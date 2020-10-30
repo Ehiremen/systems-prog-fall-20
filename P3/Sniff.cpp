@@ -28,7 +28,7 @@ Sniff::Sniff(Params& params) : params(params) {
     cerr << "Sniff initialized" << endl;
 }
 
-// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------
 
 void Sniff::print( ostream& out ) {
     if (suspiciousFiles.empty()){
@@ -43,7 +43,7 @@ void Sniff::print( ostream& out ) {
     }
 }
 
-// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------
 
 void Sniff::oneDir() {
     if ((dir = opendir(params.getStartingDirectory())) == NULL) {
@@ -87,7 +87,7 @@ void Sniff::oneDir() {
     closedir(dir);
 }
 
-// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------
 
 FileID Sniff::oneFile() {
     FileID currentFile = FileID(currentDirEntry->d_name, currentDirEntry->d_ino, dirPathName);
@@ -121,7 +121,7 @@ FileID Sniff::oneFile() {
     return currentFile;
 }
 
-// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------
 
 vector<string> Sniff::searchWord (string word, bool isCaseSensitive) {
     if (word.empty()) return {};

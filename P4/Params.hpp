@@ -48,4 +48,5 @@ public:
     string getWords() { return searchWords; }
     bool isVerbatim() { return switchVerbose; }
     bool isCaseSensitive() { return !switchI; }
+    ostream& getOutputStream() { return switchO ? myOutFile : cout; }
 };

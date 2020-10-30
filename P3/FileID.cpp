@@ -16,13 +16,13 @@ FileID::FileID (string name, int nodeNumber, string path) {
     cerr << "\tNew FileID created" << endl;
 }
 
-// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------
 
 void FileID::print( ostream& out) {
     out << "\t" << iNodeNumber << "\t" << pathnameRelToStartDir << endl;
 }
 
-// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------
 
 void FileID::insertFoundWord (string& word) {
     // check if word isn't already in vector

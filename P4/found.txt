@@ -38,7 +38,7 @@ Command: findit -ofound.txt -i --verbose -d ../dir CSCI Banana boat glitter i
 	Directory? ../dir
 	Searching for: CSCI Banana boat glitter i 
 
-Command: findit -ofound.txt -i --verbose -d ../dir CSCI Banana boat glitter i 
+Command: findit -oehisPlays.txt -i --verbose -d ../dir CSCI Banana boat glitter i 
 	Verbose? Yes
 	Case insensitive? Yes
 	Recursive? No

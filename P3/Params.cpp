@@ -85,7 +85,7 @@ Params:: Params(int argc, char* argv[]) {
     cerr << "Params instance successfully created" << endl;
 }
 
-// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------
 
 void Params:: print() {
     ostream& out = switchO ? myOutFile : cout;
@@ -109,7 +109,7 @@ void Params:: print() {
     out << endl;
 }
 
-// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------
 
 Params::Params(const Params& param2){
     outFileName = param2.outFileName;

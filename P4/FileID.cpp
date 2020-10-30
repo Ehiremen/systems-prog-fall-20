@@ -16,18 +16,18 @@ FileID::FileID (string fileName, int nodeNumber, string path) {
 //    cerr << "\tNew FileID created for: " << pathnameRelToStartDir << endl;
 }
 
-// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------
 
 void FileID::print( ostream& out) {
 //    out << "\t" << iNodeNumber << "\t" << pathnameRelToStartDir << endl;
-    out << endl << "found " << foundSniffWords.size() << " word(s) in ";
+    out << endl << "found " << foundSniffWords.size() << " queried word(s) in ";
     out <<pathnameRelToStartDir << endl;
     
     for (string word: foundSniffWords) out << word << " ";
     out << endl;
 }
 
-// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------
 
 void FileID::insertFoundWord (string& word) {
     // check if word isn't already in vector
