@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CDDA4B70254C860200E4BAFE /* tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4B67254C860200E4BAFE /* tools.cpp */; };
-		CDDA4B71254C860200E4BAFE /* FileID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4B68254C860200E4BAFE /* FileID.cpp */; };
-		CDDA4B72254C860200E4BAFE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4B6B254C860200E4BAFE /* main.cpp */; };
-		CDDA4B73254C860200E4BAFE /* Params.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4B6E254C860200E4BAFE /* Params.cpp */; };
-		CDDA4B74254C860200E4BAFE /* Sniff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4B6F254C860200E4BAFE /* Sniff.cpp */; };
+		CDDA4B87254C884500E4BAFE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4B80254C880600E4BAFE /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,14 +47,9 @@
 		CDDA4B5C254362DF00E4BAFE /* FileID.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileID.cpp; sourceTree = "<group>"; };
 		CDDA4B62254C6B0700E4BAFE /* questions.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = questions.txt; sourceTree = "<group>"; };
 		CDDA4B67254C860200E4BAFE /* tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tools.cpp; sourceTree = "<group>"; };
-		CDDA4B68254C860200E4BAFE /* FileID.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileID.cpp; sourceTree = "<group>"; };
 		CDDA4B69254C860200E4BAFE /* tools.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tools.hpp; sourceTree = "<group>"; };
-		CDDA4B6A254C860200E4BAFE /* Sniff.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sniff.hpp; sourceTree = "<group>"; };
-		CDDA4B6B254C860200E4BAFE /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		CDDA4B6C254C860200E4BAFE /* FileID.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FileID.hpp; sourceTree = "<group>"; };
-		CDDA4B6D254C860200E4BAFE /* Params.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Params.hpp; sourceTree = "<group>"; };
-		CDDA4B6E254C860200E4BAFE /* Params.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Params.cpp; sourceTree = "<group>"; };
-		CDDA4B6F254C860200E4BAFE /* Sniff.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sniff.cpp; sourceTree = "<group>"; };
+		CDDA4B80254C880600E4BAFE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CDDA4B83254C884300E4BAFE /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 		CDFDEA89250757F4005EDC57 /* Programs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Programs; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDFDEA9425075827005EDC57 /* p1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = p1.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,15 +111,10 @@
 		CDDA4B66254C859400E4BAFE /* P5 */ = {
 			isa = PBXGroup;
 			children = (
-				CDDA4B68254C860200E4BAFE /* FileID.cpp */,
-				CDDA4B6C254C860200E4BAFE /* FileID.hpp */,
-				CDDA4B6B254C860200E4BAFE /* main.cpp */,
-				CDDA4B6E254C860200E4BAFE /* Params.cpp */,
-				CDDA4B6D254C860200E4BAFE /* Params.hpp */,
-				CDDA4B6F254C860200E4BAFE /* Sniff.cpp */,
-				CDDA4B6A254C860200E4BAFE /* Sniff.hpp */,
 				CDDA4B67254C860200E4BAFE /* tools.cpp */,
 				CDDA4B69254C860200E4BAFE /* tools.hpp */,
+				CDDA4B80254C880600E4BAFE /* main.cpp */,
+				CDDA4B83254C884300E4BAFE /* makefile */,
 			);
 			path = P5;
 			sourceTree = "<group>";
@@ -217,11 +204,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDDA4B74254C860200E4BAFE /* Sniff.cpp in Sources */,
-				CDDA4B73254C860200E4BAFE /* Params.cpp in Sources */,
-				CDDA4B71254C860200E4BAFE /* FileID.cpp in Sources */,
-				CDDA4B72254C860200E4BAFE /* main.cpp in Sources */,
 				CDDA4B70254C860200E4BAFE /* tools.cpp in Sources */,
+				CDDA4B87254C884500E4BAFE /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
