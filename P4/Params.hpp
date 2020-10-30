@@ -13,8 +13,8 @@
 
 using namespace std;
 
-const char* const short_opts = ":d:iRo::"; // ':' means the preceeding arg needs
-                                          // a required argument
+const char* const short_opts = ":d:iRo::";
+    // ':' after an arg means the arg needs a required argument
     // ':' at the beginning of short_ops so compiler can distinguish '?' from ':'
 
 static struct option long_opts[] = {

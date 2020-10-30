@@ -19,10 +19,8 @@ FileID::FileID (string fileName, int nodeNumber, string path) {
 // -----------------------------------------------------------------------
 
 void FileID::print( ostream& out) {
-//    out << "\t" << iNodeNumber << "\t" << pathnameRelToStartDir << endl;
-    out << endl << "found " << foundSniffWords.size() << " queried word(s) in ";
-    out <<pathnameRelToStartDir << endl;
-    
+    out << endl << "found " << foundSniffWords.size() ;
+    out << " queried word(s) in " << pathnameRelToStartDir << endl;
     for (string word: foundSniffWords) out << word << " ";
     out << endl;
 }

@@ -1,0 +1,12 @@
+Hi Dr. Fischer, these are any last minute questions we had (doesn't affect the final product though):
+
+1.  Instead of recursively calling Sniff::travel to handle sub directories,
+    could we just have had a stack/queue of simple names of directories
+    to visit? (It would have added the name of new dirs as they showed up)
+    If that were the case, could we have just had a loop that ran until the stack/queue was empty?
+    
+2.  In Sniff::Sniff we initialized path and current to "."
+    We'd assumed "." was the simple name for our starting directory.
+    Is there any reason why we'd want its actual name (e.g. "dir") if
+    we're already in that directory?
+    Like, would we ever want to chdir("dir") when we're already in "dir"?

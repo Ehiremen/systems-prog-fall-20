@@ -11,8 +11,8 @@
 Sniff::Sniff(Params& params) : params(params), myOutStream(params.getOutputStream()) {
     params.print();
     
-    startingPath = ".";
-    currentDirName = ".";
+    startingPath = ".";     // we're telling ourselves that the simple name
+    currentDirName = ".";   // of the cwd is "."
     
     istringstream searchWords(params.getWords());
     
@@ -26,7 +26,6 @@ Sniff::Sniff(Params& params) : params(params), myOutStream(params.getOutputStrea
     // remove duplicates from words vector
     words.resize(distance(words.begin(), unique(words.begin(), words.end())));
     
-
     // populate all alpha chars
     alphaChars = "";
     for(int k=0; k<26; ++k) { alphaChars += ('a' + k);}
@@ -43,9 +42,9 @@ void Sniff::print( ostream& out ) {
     }
     
     else {
-        out << endl;
+        out << endl << endl;
         for (int k=0; k<60; k++) out << "=";
-        out << "\n\t\tSNIFFER RESULTS\n";
+        out << endl << setw(40) << setfill(' ') << "SNIFFER RESULTS\n";
         for (int k=0; k<60; k++) out << "=";
         for (FileID fID: suspiciousFiles) { fID.print(out); }
         out << endl;
@@ -61,7 +60,11 @@ FileID Sniff::oneFile(struct dirent *currentDirEntry) {
     thisFile.open(currentFile.getName());
     
     if (!thisFile) {
-        cerr << "\t" << currentFile.getName() << " is empty\n";
+        if (params.isVerbatim()) myOutStream << " (couldn't be opened)";
+    }
+    
+    else if (thisFile.peek() == ifstream::traits_type::eof()) {
+        if (params.isVerbatim()) myOutStream << " (is empty file)";
     }
     
     else {
@@ -98,10 +101,7 @@ vector<string> Sniff::searchWord (string word, bool isCaseSensitive) {
             transform(s.begin(), s.end(), s.begin(), ::tolower);
         }
         
-        if (word.find(s) != string::npos) {
-            // word was found
-            out.push_back(s);
-        }
+        if (word.find(s) != string::npos) out.push_back(s); // word was found
     }
     return out;
 }
@@ -117,21 +117,29 @@ void Sniff::run(string startingDir) {
     string cwd =getcwd(NULL, 0);
     cerr << "\nafter chdir, cwd: " << cwd << endl;
     
+    cerr << "\nstarting sniff..." << endl;
+    
     startingPath = ".";     // at this point, "." is the simple name of
     currentDirName = ".";   // whatever directory we are currently in
    
-    string simpleStartingDir = cwd.substr(cwd.find_last_of("/") + 1);
-    myOutStream << endl << simpleStartingDir << endl;
+    if (params.isVerbatim()){
+        string simpleStartingDir = cwd.substr(cwd.find_last_of("/") + 1);
+        myOutStream << endl << simpleStartingDir << " (dir)";
+    }
     
     travel(startingPath, currentDirName, 1);
     print(myOutStream);
     
-    for (int k=0; k<60; k++) myOutStream << "-";
+    for (int k=0; k<60; k++) myOutStream << "-"; // mark end of run
     myOutStream << endl << endl;
 }
 
 // -----------------------------------------------------------------------
 
+/* Comments:
+    * By having DIR* dir local to Sniff::travel, we (lazily) avoid
+    * worrying about correctly closing DIR
+ */
 void Sniff::travel(string path, string nextDir, int depth){
     DIR *dir;
     struct dirent *currentDirEntry;
@@ -141,14 +149,17 @@ void Sniff::travel(string path, string nextDir, int depth){
         return;
     }
     
-    currentDirName = nextDir; // this is actually a very useless variable as
-                              // it's only used to call travel the first time
+    currentDirName = nextDir;
+        // both of these are actually useless variables.
+        // nextDir is passed but never used. I can't tell you
+        // why currentDirName is still in this class
     
     currentDirEntry = readdir(dir); // discard .
     currentDirEntry = readdir(dir); // discard ..
     
     while ((currentDirEntry = readdir(dir)) != NULL) {
-        startingPath = path;
+        startingPath = path; // Sniff::oneFile needs this variable to
+                             // open the file from the correct location
         
         // discard entry if not regular file or directory
         if ((currentDirEntry->d_type != DT_REG) && (currentDirEntry->d_type != DT_DIR)) {
@@ -158,13 +169,12 @@ void Sniff::travel(string path, string nextDir, int depth){
         // skip .DS_Store file
         if (strcmp(currentDirEntry->d_name, ".DS_Store") == 0) continue;
         
-        for (int i=0; i<depth; i++) myOutStream << tab;
-
-        // echo entry's name if verbatim switch is on
+        // echo each entry's name if verbatim switch is on
         if (params.isVerbatim()) {
+            myOutStream << endl;
+            for (int i=0; i<depth; i++) myOutStream << tab;
             myOutStream << "name: " << currentDirEntry->d_name;
             if (currentDirEntry->d_type == DT_DIR) myOutStream << " (dir)";
-            myOutStream << endl;
         }
         
         // recursively handle directories
@@ -172,7 +182,7 @@ void Sniff::travel(string path, string nextDir, int depth){
             travel(path + "/" + currentDirEntry->d_name, currentDirEntry->d_name, depth + 1);
         }
         
-        // handle regular file
+        // handle regular files
         if (currentDirEntry->d_type == DT_REG) {
             FileID tempFile = oneFile(currentDirEntry);
             if (tempFile.countFoundWords() > 0) {

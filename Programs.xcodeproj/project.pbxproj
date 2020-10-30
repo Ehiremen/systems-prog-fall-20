@@ -48,6 +48,7 @@
 		CDDA4B5A254362DF00E4BAFE /* Params.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Params.hpp; sourceTree = "<group>"; };
 		CDDA4B5B254362DF00E4BAFE /* tools.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tools.hpp; sourceTree = "<group>"; };
 		CDDA4B5C254362DF00E4BAFE /* FileID.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileID.cpp; sourceTree = "<group>"; };
+		CDDA4B62254C6B0700E4BAFE /* questions.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = questions.txt; sourceTree = "<group>"; };
 		CDFDEA89250757F4005EDC57 /* Programs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Programs; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDFDEA9425075827005EDC57 /* p1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = p1.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +76,7 @@
 				CDDA4B57254362DF00E4BAFE /* Sniff.hpp */,
 				CDDA4B55254362DF00E4BAFE /* tools.cpp */,
 				CDDA4B5B254362DF00E4BAFE /* tools.hpp */,
+				CDDA4B62254C6B0700E4BAFE /* questions.txt */,
 			);
 			path = P4;
 			sourceTree = "<group>";

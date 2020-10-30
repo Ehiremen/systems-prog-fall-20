@@ -11,7 +11,6 @@
 #include "tools.hpp"
 #include <vector>
 
-
 class FileID {
 private:
     string fileName;

@@ -11,7 +11,7 @@
 Params:: Params(int argc, char* argv[]) {
     int currentArg = 0, optIndex;
     
-    for (; ; ) {
+    for (; ; ) { // loop to process passed args
         int opt = getopt_long(argc, argv, short_opts, long_opts, &optIndex);
         
         if (opt == -1) break;

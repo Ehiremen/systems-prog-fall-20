@@ -1,0 +1,80 @@
+Command: findit -i --verbose -osome.txt -d ../dir CSCI csci flippin ehis jenn junk random file 
+	Verbose? Yes
+	Case insensitive? Yes
+	Recursive? No
+	Output file name: some.txt
+	Directory? ../dir
+	Searching for: CSCI csci flippin ehis jenn junk random file 
+
+
+dir (dir)
+    name: file2.txt
+    name: empty.txt (is empty file)
+    name: file3.txt
+    name: file1.txt
+    name: sub1 (dir)
+        name: blank.txt
+        name: junk.txt
+        name: jenny.txt
+        name: third.txt (is empty file)
+        name: random.txt
+    name: linkFile1
+    name: myjunk.txt
+    name: sub2 (dir)
+        name: someFile.txt
+        name: sub2-2 (dir)
+            name: sub2_2_file.txt
+            name: sub3 (dir)
+                name: sub3_file1.txt
+                name: sub3_file2.txt
+        name: sub2-1 (dir)
+            name: sub2_1_file2.txt
+            name: sub2_1_file1.txt
+
+============================================================
+                        SNIFFER RESULTS
+============================================================
+found 1 queried word(s) in ./file2.txt
+csci 
+
+found 1 queried word(s) in ./file1.txt
+csci 
+
+found 1 queried word(s) in ./sub1/blank.txt
+file 
+
+found 1 queried word(s) in ./sub1/junk.txt
+junk 
+
+found 2 queried word(s) in ./sub1/jenny.txt
+jenn ehis 
+
+found 1 queried word(s) in ./sub1/random.txt
+random 
+
+found 1 queried word(s) in ./linkFile1
+csci 
+
+found 1 queried word(s) in ./myjunk.txt
+csci 
+
+found 2 queried word(s) in ./sub2/someFile.txt
+random file 
+
+found 1 queried word(s) in ./sub2/sub2-2/sub2_2_file.txt
+file 
+
+found 1 queried word(s) in ./sub2/sub2-2/sub3/sub3_file1.txt
+csci 
+
+found 1 queried word(s) in ./sub2/sub2-2/sub3/sub3_file2.txt
+file 
+
+found 1 queried word(s) in ./sub2/sub2-1/sub2_1_file2.txt
+file 
+
+found 3 queried word(s) in ./sub2/sub2-1/sub2_1_file1.txt
+random flippin file 
+
+------------------------------------------------------------
+
