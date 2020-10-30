@@ -1,0 +1,305 @@
+Command: findit -ofound.txt -i --verbose -d ../dir CSCI Banana boat glitter i 
+	Verbose? Yes
+	Case insensitive? Yes
+	Recursive? No
+	Output file name: found.txt
+	Directory? ../dir
+	Searching for: CSCI Banana boat glitter i 
+
+
+dir (dir)
+    name: file2.txt
+    name: empty.txt (is empty file)
+    name: file3.txt
+    name: file1.txt
+    name: hlinkFile3
+    name: hlinkFile2
+    name: sub1 (dir)
+        name: blank.txt
+        name: third (is empty file)
+        name: junk.txt
+        name: jenny.txt
+        name: third2 (is empty file)
+        name: third3 (is empty file)
+        name: hlBlank
+        name: third.txt (is empty file)
+        name: hlJenny
+        name: random.txt
+    name: linkFile1
+    name: myjunk.txt
+    name: hardLinkFile2
+    name: sub2 (dir)
+        name: someFile.txt
+        name: sub2-2 (dir)
+            name: sub2_2_file.txt
+            name: inter_directory_link
+            name: sub3 (dir)
+                name: sub3_file1.txt
+                name: sub3_file2.txt
+        name: sub2-1 (dir)
+            name: hardLink
+            name: sub2_1_file2.txt
+            name: spamLink
+            name: sub2_1_file1.txt
+
+============================================================
+                        SNIFFER RESULTS
+============================================================
+found 2 queried word(s) in ./file2.txt
+i csci 
+
+found 3 queried word(s) in ./file3.txt
+banana i boat 
+
+found 5 queried word(s) in ./file1.txt
+csci i banana boat glitter 
+
+found 3 queried word(s) in ./hlinkFile3
+banana i boat 
+
+found 2 queried word(s) in ./hlinkFile2
+i csci 
+
+found 1 queried word(s) in ./sub1/blank.txt
+i 
+
+found 1 queried word(s) in ./sub1/junk.txt
+i 
+
+found 1 queried word(s) in ./sub1/jenny.txt
+i 
+
+found 1 queried word(s) in ./sub1/hlBlank
+i 
+
+found 1 queried word(s) in ./sub1/hlJenny
+i 
+
+found 2 queried word(s) in ./sub1/random.txt
+banana i 
+
+found 5 queried word(s) in ./linkFile1
+csci i banana boat glitter 
+
+found 2 queried word(s) in ./myjunk.txt
+csci i 
+
+found 2 queried word(s) in ./hardLinkFile2
+i csci 
+
+found 1 queried word(s) in ./sub2/someFile.txt
+i 
+
+found 1 queried word(s) in ./sub2/sub2-2/sub2_2_file.txt
+i 
+
+found 2 queried word(s) in ./sub2/sub2-2/inter_directory_link
+i csci 
+
+found 2 queried word(s) in ./sub2/sub2-2/sub3/sub3_file1.txt
+i csci 
+
+found 1 queried word(s) in ./sub2/sub2-2/sub3/sub3_file2.txt
+i 
+
+found 1 queried word(s) in ./sub2/sub2-1/hardLink
+i 
+
+found 1 queried word(s) in ./sub2/sub2-1/sub2_1_file2.txt
+i 
+
+found 1 queried word(s) in ./sub2/sub2-1/spamLink
+i 
+
+found 1 queried word(s) in ./sub2/sub2-1/sub2_1_file1.txt
+i 
+
+------------------------------------------------------------
+
+Command: findit -i --verbose -ofound.txt -d ../dir CSCI csci flippin ehis jenn junk random file 
+	Verbose? Yes
+	Case insensitive? Yes
+	Recursive? No
+	Output file name: found.txt
+	Directory? ../dir
+	Searching for: CSCI csci flippin ehis jenn junk random file 
+
+
+dir (dir)
+    name: file2.txt
+    name: empty.txt (is empty file)
+    name: file3.txt
+    name: file1.txt
+    name: hlinkFile3
+    name: hlinkFile2
+    name: sub1 (dir)
+        name: blank.txt
+        name: third (is empty file)
+        name: junk.txt
+        name: jenny.txt
+        name: third2 (is empty file)
+        name: third3 (is empty file)
+        name: hlBlank
+        name: third.txt (is empty file)
+        name: hlJenny
+        name: random.txt
+    name: linkFile1
+    name: myjunk.txt
+    name: hardLinkFile2
+    name: sub2 (dir)
+        name: someFile.txt
+        name: sub2-2 (dir)
+            name: sub2_2_file.txt
+            name: inter_directory_link
+            name: sub3 (dir)
+                name: sub3_file1.txt
+                name: sub3_file2.txt
+        name: sub2-1 (dir)
+            name: hardLink
+            name: sub2_1_file2.txt
+            name: spamLink
+            name: sub2_1_file1.txt
+
+============================================================
+                        SNIFFER RESULTS
+============================================================
+found 1 queried word(s) in ./file2.txt
+csci 
+
+found 1 queried word(s) in ./file1.txt
+csci 
+
+found 1 queried word(s) in ./hlinkFile2
+csci 
+
+found 1 queried word(s) in ./sub1/blank.txt
+file 
+
+found 1 queried word(s) in ./sub1/junk.txt
+junk 
+
+found 2 queried word(s) in ./sub1/jenny.txt
+jenn ehis 
+
+found 1 queried word(s) in ./sub1/hlBlank
+file 
+
+found 2 queried word(s) in ./sub1/hlJenny
+jenn ehis 
+
+found 1 queried word(s) in ./sub1/random.txt
+random 
+
+found 1 queried word(s) in ./linkFile1
+csci 
+
+found 1 queried word(s) in ./myjunk.txt
+csci 
+
+found 1 queried word(s) in ./hardLinkFile2
+csci 
+
+found 2 queried word(s) in ./sub2/someFile.txt
+random file 
+
+found 1 queried word(s) in ./sub2/sub2-2/sub2_2_file.txt
+file 
+
+found 1 queried word(s) in ./sub2/sub2-2/inter_directory_link
+csci 
+
+found 1 queried word(s) in ./sub2/sub2-2/sub3/sub3_file1.txt
+csci 
+
+found 1 queried word(s) in ./sub2/sub2-2/sub3/sub3_file2.txt
+file 
+
+found 3 queried word(s) in ./sub2/sub2-1/hardLink
+random flippin file 
+
+found 1 queried word(s) in ./sub2/sub2-1/sub2_1_file2.txt
+file 
+
+found 3 queried word(s) in ./sub2/sub2-1/spamLink
+random flippin file 
+
+found 3 queried word(s) in ./sub2/sub2-1/sub2_1_file1.txt
+random flippin file 
+
+------------------------------------------------------------
+
+Command: findit -ofound.txt -d ../dir CSCI csci flippin ehis jenn junk random file 
+	Verbose? No
+	Case insensitive? No
+	Recursive? No
+	Output file name: found.txt
+	Directory? ../dir
+	Searching for: CSCI csci flippin ehis jenn junk random file 
+
+
+
+============================================================
+                        SNIFFER RESULTS
+============================================================
+found 1 queried word(s) in ./file2.txt
+csci 
+
+found 1 queried word(s) in ./file1.txt
+CSCI 
+
+found 1 queried word(s) in ./hlinkFile2
+csci 
+
+found 1 queried word(s) in ./sub1/blank.txt
+file 
+
+found 1 queried word(s) in ./sub1/junk.txt
+junk 
+
+found 2 queried word(s) in ./sub1/jenny.txt
+jenn ehis 
+
+found 1 queried word(s) in ./sub1/hlBlank
+file 
+
+found 2 queried word(s) in ./sub1/hlJenny
+jenn ehis 
+
+found 1 queried word(s) in ./sub1/random.txt
+random 
+
+found 1 queried word(s) in ./linkFile1
+CSCI 
+
+found 1 queried word(s) in ./myjunk.txt
+csci 
+
+found 1 queried word(s) in ./hardLinkFile2
+csci 
+
+found 1 queried word(s) in ./sub2/sub2-2/sub2_2_file.txt
+file 
+
+found 1 queried word(s) in ./sub2/sub2-2/inter_directory_link
+csci 
+
+found 1 queried word(s) in ./sub2/sub2-2/sub3/sub3_file1.txt
+csci 
+
+found 1 queried word(s) in ./sub2/sub2-2/sub3/sub3_file2.txt
+file 
+
+found 2 queried word(s) in ./sub2/sub2-1/hardLink
+random file 
+
+found 1 queried word(s) in ./sub2/sub2-1/sub2_1_file2.txt
+file 
+
+found 2 queried word(s) in ./sub2/sub2-1/spamLink
+random file 
+
+found 2 queried word(s) in ./sub2/sub2-1/sub2_1_file1.txt
+random file 
+
+------------------------------------------------------------
+
