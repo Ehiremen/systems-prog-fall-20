@@ -185,12 +185,13 @@ void Sniff::travel(string path, string nextDir){
     }
     
     currentDirName = nextDir;
-    startingPath = path;
+//    startingPath = path;
     
     currentDirEntry = readdir(dir); // discard .
     currentDirEntry = readdir(dir); // discard ..
     
     while ((currentDirEntry = readdir(dir)) != NULL) {
+        startingPath = path;
         
         // discard entry if not regular file or directory
         if ((currentDirEntry->d_type != DT_REG) && (currentDirEntry->d_type != DT_DIR)) {
@@ -202,7 +203,7 @@ void Sniff::travel(string path, string nextDir){
         
         // echo entry's name if verbatim switch is on
         if (params.isVerbatim()) {
-            cerr << "\rname: " << currentDirEntry->d_name << endl;
+            cerr << "\nname: " << currentDirEntry->d_name << endl;
         }
         
         // recursively handle directories
@@ -219,7 +220,7 @@ void Sniff::travel(string path, string nextDir){
             }
         }
         
-        cerr << "\tdone processing " << currentDirEntry->d_name << endl << endl;
+        cerr << "\n\tdone processing " << currentDirEntry->d_name << endl;
     }
     
     closedir(dir);
