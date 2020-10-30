@@ -23,6 +23,7 @@ private:
     vector<string> words;
     vector<FileID> suspiciousFiles;
     string alphaChars;
+    const string tab = "    ";
     
 //    DIR *dir;
 //    struct dirent *currentDirEntry;
@@ -43,7 +44,7 @@ public:
     void oneDir();
     FileID oneFile(struct dirent *currentDirEntry);
     void run(string startingDir);
-    void travel(string path, string nextDir);
+    void travel(string path, string nextDir, int depth);
     void print( ostream& out );
 
 };

@@ -169,13 +169,16 @@ void Sniff::run(string startingDir) {
     startingPath = ".";     // at this point, "." is the simple name of
     currentDirName = ".";   // whatever directory we are currently in
    
-    travel(startingPath, currentDirName);
+    string simpleStartingDir = startingDir.substr(startingDir.find_last_of("/") + 1);
+    cerr << simpleStartingDir << endl;
+    
+    travel(startingPath, currentDirName, 1);
     print(cout);
 }
 
 // -----------------------------------------------------------------------------
 
-void Sniff::travel(string path, string nextDir){
+void Sniff::travel(string path, string nextDir, int depth){
     DIR *dir;
     struct dirent *currentDirEntry;
     
@@ -185,7 +188,6 @@ void Sniff::travel(string path, string nextDir){
     }
     
     currentDirName = nextDir;
-//    startingPath = path;
     
     currentDirEntry = readdir(dir); // discard .
     currentDirEntry = readdir(dir); // discard ..
@@ -201,15 +203,17 @@ void Sniff::travel(string path, string nextDir){
         // skip .DS_Store file
         if (strcmp(currentDirEntry->d_name, ".DS_Store") == 0) continue;
         
+        for (int i=0; i<depth; i++) cerr << tab;
+
         // echo entry's name if verbatim switch is on
         if (params.isVerbatim()) {
-            cerr << "\nname: " << currentDirEntry->d_name << endl;
+            cerr << "name: " << currentDirEntry->d_name << endl;
         }
         
         // recursively handle directories
         if (currentDirEntry->d_type == DT_DIR) {
-            cerr << "\tEntering directory: " << currentDirEntry->d_name << endl;
-            travel(path + "/" + currentDirEntry->d_name, currentDirEntry->d_name);
+//            cerr << "\tEntering directory: " << currentDirEntry->d_name << endl;
+            travel(path + "/" + currentDirEntry->d_name, currentDirEntry->d_name, depth + 1);
         }
         
         // handle regular file
@@ -220,7 +224,7 @@ void Sniff::travel(string path, string nextDir){
             }
         }
         
-        cerr << "\n\tdone processing " << currentDirEntry->d_name << endl;
+//        cerr << "\n\tdone processing " << currentDirEntry->d_name << endl;
     }
     
     closedir(dir);
