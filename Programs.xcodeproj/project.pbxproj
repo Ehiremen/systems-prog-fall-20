@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CDB12FAA2558BD0100D02381 /* Kid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB12FA82558BD0100D02381 /* Kid.cpp */; };
 		CDDA4B70254C860200E4BAFE /* tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4B67254C860200E4BAFE /* tools.cpp */; };
 		CDDA4B87254C884500E4BAFE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4B80254C880600E4BAFE /* main.cpp */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,9 @@
 		CD8C8BDA25255398000E209D /* FileID.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FileID.hpp; sourceTree = "<group>"; };
 		CD8C8BDD25255449000E209D /* Sniff.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sniff.cpp; sourceTree = "<group>"; };
 		CD8C8BDE25255449000E209D /* Sniff.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Sniff.hpp; sourceTree = "<group>"; };
+		CDB12FA62558B7CD00D02381 /* Model.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Model.hpp; sourceTree = "<group>"; };
+		CDB12FA82558BD0100D02381 /* Kid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Kid.cpp; sourceTree = "<group>"; };
+		CDB12FA92558BD0100D02381 /* Kid.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Kid.hpp; sourceTree = "<group>"; };
 		CDDA4B52254362C000E4BAFE /* tools.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tools.cpp; sourceTree = "<group>"; };
 		CDDA4B53254362C000E4BAFE /* tools.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = tools.hpp; sourceTree = "<group>"; };
 		CDDA4B55254362DF00E4BAFE /* tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tools.cpp; sourceTree = "<group>"; };
@@ -113,6 +117,9 @@
 			children = (
 				CDDA4B67254C860200E4BAFE /* tools.cpp */,
 				CDDA4B69254C860200E4BAFE /* tools.hpp */,
+				CDB12FA62558B7CD00D02381 /* Model.hpp */,
+				CDB12FA82558BD0100D02381 /* Kid.cpp */,
+				CDB12FA92558BD0100D02381 /* Kid.hpp */,
 				CDDA4B80254C880600E4BAFE /* main.cpp */,
 				CDDA4B83254C884300E4BAFE /* makefile */,
 			);
@@ -204,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDB12FAA2558BD0100D02381 /* Kid.cpp in Sources */,
 				CDDA4B70254C860200E4BAFE /* tools.cpp in Sources */,
 				CDDA4B87254C884500E4BAFE /* main.cpp in Sources */,
 			);
