@@ -23,6 +23,9 @@ Kid::Kid(Model* model, int ID) : sharedModel(model), kidID(ID) {
     
     int rc = pthread_create( &tid, NULL, startThread, (void *)this );
     if(rc) fatal ("ERROR; return code from pthread_create() is %d", rc);
+    else {
+        printf("Created kid #%d\n", kidID);
+    }
 }
 
 // -----------------------------------------------------------------------

@@ -24,6 +24,7 @@ typedef struct Model {
     Model (int numChairs) {
         nChairs = numChairs;
         chairArrayPtr = (int*) malloc (numChairs * sizeof(int));
+        printf("Model is alive!!!\n");
     }
     
     ~Model () {

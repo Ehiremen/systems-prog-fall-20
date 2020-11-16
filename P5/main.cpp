@@ -43,6 +43,11 @@ void sigHandler (int sig) {
 }
 
 // -----------------------------------------------------------------------
+// Prototypes
+
+void PlayOneRound( Model* m, Kid* players[] );
+
+// -----------------------------------------------------------------------
 
 int main (int argc, char* argv[]) {
     banner();
@@ -52,12 +57,45 @@ int main (int argc, char* argv[]) {
         fatal("ERROR; must run game with only one extra argument (number--int--of kids!\n");
     }
     
-    srand(time ( NULL ));  // Random numbers used by all threads.
+    srand(time ( NULL ));   // Random numbers used by all threads.
     signal(SIGINT, sigHandler);
     
-    int numKids = stoi(argv[1]);
-    Model m(numKids);
+    const int numKids = stoi(argv[1]);
+    Model m(numKids - 1);
+    int rc;
+    pthread_t who;
+    
+    Kid* kids[numKids];     // array of pointers to Kid objects for each player.
+    
+    // loop to create the required number of kids
+    for (int k=0; k<numKids; k++) {
+        kids[k] = new Kid(&m, k);
+    }
+    
+    for (int k=numKids; k>0; k--) {
+        PlayOneRound(&m, kids);
+        
+        if (k==1) {
+            printf("\n\tWe have a winner!!!\n");
+            printf("\t\tCongratulations kid #%d\n", m.chairArrayPtr[0]);
+        }
+    }
+    
+    // joining loop
+    for (int t=0; t<numKids; t++) {
+        who = kids[t]->getTid();
+        rc = pthread_join(kids[t]->getTid(), NULL);
+        
+        if (rc) fatal("ERROR; returned from join(): %d", rc);
+        printf("In main: Welcome home %ld\n", who);
+    }
     
     bye();
     return 0;
+}
+
+// -----------------------------------------------------------------------
+
+void PlayOneRound( Model* m, Kid* players[] ) {
+    
 }
