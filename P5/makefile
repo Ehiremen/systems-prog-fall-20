@@ -6,7 +6,7 @@ CXX = c++
 CXXFLAGS = -std=c++14 -g -Wall -O1
 
 # Object modules comprising this application ----------------
-OBJ = main.o tools.o
+OBJ = main.o tools.o Kid.o
 
 # Build targets
 TARGETS = chairs

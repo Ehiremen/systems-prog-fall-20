@@ -19,6 +19,8 @@ void* startThread (void* kid) {
     return NULL;
 }
 
+// -----------------------------------------------------------------------
+
 const char* sigName (int sig) {
     switch (sig) {
         case SIGUSR1:
@@ -34,16 +36,20 @@ const char* sigName (int sig) {
     }
 }
 
+// -----------------------------------------------------------------------
+
 void sigHandler (int sig) {
     printf ("Caught signal: %s\n", sigName(sig));
 }
+
+// -----------------------------------------------------------------------
 
 int main (int argc, char* argv[]) {
     banner();
     cerr << "\tWelcome to musical chairs!\n\n";
     
     if (argc != 2) {
-        fatal("ERROR; must run game with only one extra argument (number--int--of kids!");
+        fatal("ERROR; must run game with only one extra argument (number--int--of kids!\n");
     }
     
     srand(time ( NULL ));  // Random numbers used by all threads.

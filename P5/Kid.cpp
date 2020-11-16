@@ -10,9 +10,9 @@
 
 extern void* startThread (void* kid);
 
-Kid::Kid(Model* model, int ID) {
-    kidID = ID;
-    sharedModel = model;
+Kid::Kid(Model* model, int ID) : sharedModel(model), kidID(ID) {
+//    kidID = ID;
+//    sharedModel = model;
     
     seatNumber = -1;
     
@@ -25,16 +25,30 @@ Kid::Kid(Model* model, int ID) {
     if(rc) fatal ("ERROR; return code from pthread_create() is %d", rc);
 }
 
+// -----------------------------------------------------------------------
+
+Kid::~Kid() {
+    cerr << "Kid #" << kidID << " is no more" << endl;
+}
+
+// -----------------------------------------------------------------------
+
 void Kid::play() {
     
 }
 
+// -----------------------------------------------------------------------
+
 void Kid::doMarch() {
     wantSeat = rand()%sharedModel->nChairs;
     
+    pthread_mutex_lock( &sharedModel->turn_mutex);
     sharedModel->nMarching++;
     pthread_cond_signal( &sharedModel->turn );
+    pthread_mutex_unlock( &sharedModel->turn_mutex);
 }
+
+// -----------------------------------------------------------------------
 
 void Kid::doSit() {
     // make things fair for all kids by sleeping for a random amount of time
@@ -44,9 +58,10 @@ void Kid::doSit() {
     
     int tryingThisSeat = wantSeat;
     
-    sharedModel->nMarching++;
     pthread_mutex_lock( &sharedModel->turn_mutex);
- 
+    sharedModel->nMarching--;
+    
+    int numChairsInPlay = sharedModel->nChairs;
     do {
         
         // chair is free!
@@ -56,22 +71,31 @@ void Kid::doSit() {
             break;
         }
         
-        tryingThisSeat = (tryingThisSeat + 1) % sharedModel->nChairs;
+        // chair is not free :(, move to next chair
+        else {
+            tryingThisSeat = (tryingThisSeat + 1);
+            
+            // using this if statement to avoid doing a modular
+            // operation on each iteration of the loop
+            if (tryingThisSeat == numChairsInPlay) tryingThisSeat = 0;
+        }
+        
     } while (tryingThisSeat != wantSeat);
     
     if (seatNumber == -1) {
-        // didn't get a seat, signal mum I'm quitting
+        // didn't get a seat, signal mum that I'm quitting
         
         ss.str("");
-        ss <<"Bye from kid# " << kidID <<": no chair for me :(\n";
+        ss <<"Bye from kid #" << kidID <<": no chair for me :(\n";
         cout <<ss.str();
-        pthread_mutex_unlock( &sharedModel->turn_mutex);
         pthread_cond_signal( &sharedModel->turn );
+        pthread_mutex_unlock( &sharedModel->turn_mutex);
         pthread_exit(0);
     }
+    
     else {
-        pthread_mutex_unlock( &sharedModel->turn_mutex);
         pthread_cond_signal( &sharedModel->turn );
+        pthread_mutex_unlock( &sharedModel->turn_mutex);
     }
     
 }

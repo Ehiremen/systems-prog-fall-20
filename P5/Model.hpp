@@ -21,12 +21,12 @@ typedef struct Model {
     pthread_mutex_t turn_mutex  = PTHREAD_MUTEX_INITIALIZER;
     pthread_cond_t  turn        = PTHREAD_COND_INITIALIZER;
     
-    Model(int numChairs){
+    Model (int numChairs) {
         nChairs = numChairs;
         chairArrayPtr = (int*) malloc (numChairs * sizeof(int));
     }
     
-    ~Model() {
+    ~Model () {
         delete chairArrayPtr;
     }
     
