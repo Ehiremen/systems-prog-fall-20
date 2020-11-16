@@ -34,7 +34,16 @@ Kid::~Kid() {
 // -----------------------------------------------------------------------
 
 void Kid::play() {
-    
+    int rc, sig;
+    for (;;) {
+        rc = sigwait(&sigSet, &sig);
+        
+        if (sig == SIGUSR1) doMarch();
+        else if (sig == SIGUSR2) doSit();
+        else {
+            printf("This is the end of the road for kid #%d\n", kidID);
+        }
+    }
 }
 
 // -----------------------------------------------------------------------
