@@ -11,9 +11,7 @@
 extern void* startThread (void* kid);
 
 Kid::Kid(Model* model, int ID) : sharedModel(model), kidID(ID) {
-//    kidID = ID;
-//    sharedModel = model;
-    
+    int rc;
     seatNumber = -1;
     
     sigemptyset(&sigSet);
@@ -21,10 +19,12 @@ Kid::Kid(Model* model, int ID) : sharedModel(model), kidID(ID) {
     sigaddset(&sigSet, SIGUSR2);
     sigaddset(&sigSet, SIGQUIT);
     
-    int rc = pthread_create( &tid, NULL, startThread, (void *)this );
+    whereAmI += to_string(kidID) + ":";
+    
+    rc = pthread_create( &tid, NULL, startThread, (void *) this );
     if(rc) fatal ("ERROR; return code from pthread_create() is %d", rc);
     else {
-        printf("Created kid #%d\n", kidID);
+        printf("%s Created kid #%d\n", whereAmI.c_str(), kidID);
     }
 }
 
@@ -40,11 +40,18 @@ void Kid::play() {
     int rc, sig;
     for (;;) {
         rc = sigwait(&sigSet, &sig);
+        printf("%s received Sig %d\n", whereAmI.c_str(), sig);
+        
         
         if (sig == SIGUSR1) doMarch();
         else if (sig == SIGUSR2) doSit();
+        else if (sig == SIGQUIT){
+            cout << whereAmI << " This is the end of the road for kid #" << kidID << endl;
+//            printf("%s This is the end of the road for kid #%d\n", whereAmI.c_str(), kidID);
+            pthread_exit(NULL);
+        }
         else {
-            printf("This is the end of the road for kid #%d\n", kidID);
+            exit(sig);
         }
     }
 }
@@ -52,6 +59,7 @@ void Kid::play() {
 // -----------------------------------------------------------------------
 
 void Kid::doMarch() {
+    printf("%s I'm marching!\n", whereAmI.c_str());
     wantSeat = rand()%sharedModel->nChairs;
     
     pthread_mutex_lock( &sharedModel->turn_mutex);
@@ -66,7 +74,6 @@ void Kid::doSit() {
     // make things fair for all kids by sleeping for a random amount of time
     int randomSleepTime = rand()%1000;
     usleep(randomSleepTime);
-    pthread_kill( tid, SIGQUIT );
     
     int tryingThisSeat = wantSeat;
     
@@ -98,14 +105,15 @@ void Kid::doSit() {
         // didn't get a seat, signal mum that I'm quitting
         
         ss.str("");
-        ss <<"Bye from kid #" << kidID <<": no chair for me :(\n";
+        ss << whereAmI << " Bye from kid #" << kidID <<": no chair for me :(\n";
         cout <<ss.str();
         pthread_cond_signal( &sharedModel->turn );
         pthread_mutex_unlock( &sharedModel->turn_mutex);
-        pthread_exit(0);
+        pthread_exit(NULL);
     }
     
     else {
+        printf("%s got chair #%d\n", whereAmI.c_str(), seatNumber);
         pthread_cond_signal( &sharedModel->turn );
         pthread_mutex_unlock( &sharedModel->turn_mutex);
     }

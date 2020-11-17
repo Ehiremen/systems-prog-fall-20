@@ -20,6 +20,7 @@ private:
     sigset_t sigSet;
     int wantSeat, seatNumber;
     ostringstream ss;
+    string whereAmI = "In kid #"; 
     
 public:
     Kid(Model* model, int ID);
@@ -28,7 +29,8 @@ public:
     int getID() { return kidID; }
     pthread_t getTid() { return tid; }
     bool isStanding() { return (seatNumber == -1); }
-    void standUp() { seatNumber = -1; }
+    void standUp() { seatNumber = -1; printf("%s standing up!\n", whereAmI.c_str()); }
     void doMarch();
     void doSit();
+    int getSeatNumber() { return seatNumber; }
 };
