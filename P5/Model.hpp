@@ -7,28 +7,23 @@
 //
 
 #pragma once
-
 #include "tools.hpp"
 
 using namespace std;
 
-// using typedef so I don't need to use Model scope later on
-typedef struct Model {
-    mutex mtx;
+struct Model {
     int nChairs;
     int* chairArrayPtr;
-    int nMarching;
-    pthread_mutex_t turn_mutex  = PTHREAD_MUTEX_INITIALIZER;
+    int nMarching = 0;
+    pthread_mutex_t mtx  = PTHREAD_MUTEX_INITIALIZER;
     pthread_cond_t  turn        = PTHREAD_COND_INITIALIZER;
     
+    Model () {}
     Model (int numChairs) {
         nChairs = numChairs;
-        chairArrayPtr = (int*) malloc (numChairs * sizeof(int));
+        chairArrayPtr = new int[numChairs];
         printf("Model is alive!!!\n");
     }
     
-    ~Model () {
-        delete chairArrayPtr;
-    }
-    
-} Model;
+    ~Model () { delete chairArrayPtr; }
+}

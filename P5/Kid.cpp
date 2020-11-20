@@ -19,6 +19,11 @@ Kid::Kid(Model* model, int ID) : sharedModel(model), kidID(ID) {
     sigaddset(&sigSet, SIGUSR2);
     sigaddset(&sigSet, SIGQUIT);
     
+    sigControl.sa_handler = sigHandler;
+    sigControl.sa_mask = sigSet;
+    sigControl.sa_flags = 0;
+    
+    
     whereAmI += to_string(kidID) + ":";
     
     rc = pthread_create( &tid, NULL, startThread, (void *) this );
@@ -36,6 +41,40 @@ Kid::~Kid() {
 
 // -----------------------------------------------------------------------
 
+void Kid::sigHandler( int sig ) {
+    printf ("Caught signal: %s\n", sigName(sig));
+    
+    if (sig == SIGUSR1) doMarch();
+    else if (sig == SIGUSR2) doSit();
+    else if (sig == SIGQUIT){
+        cout << whereAmI << " This is the end of the road for kid #" << kidID << endl;
+//            printf("%s This is the end of the road for kid #%d\n", whereAmI.c_str(), kidID);
+        pthread_exit(NULL);
+    }
+    else {
+        exit(sig);
+    }
+}
+
+// -----------------------------------------------------------------------
+
+const char* Kid::sigName (int sig) {
+    switch (sig) {
+        case SIGUSR1:
+            return "SIGUSR1"; break;
+            
+        case SIGUSR2:
+            return "SIGUSR2"; break;
+            
+        case SIGQUIT:
+            return "SIGQUIT"; break;
+            
+        default: return "Unexpected signal";
+    }
+}
+
+// -----------------------------------------------------------------------
+
 void Kid::play() {
     int rc, sig;
     for (;;) {
@@ -47,7 +86,6 @@ void Kid::play() {
         else if (sig == SIGUSR2) doSit();
         else if (sig == SIGQUIT){
             cout << whereAmI << " This is the end of the road for kid #" << kidID << endl;
-//            printf("%s This is the end of the road for kid #%d\n", whereAmI.c_str(), kidID);
             pthread_exit(NULL);
         }
         else {
@@ -60,12 +98,14 @@ void Kid::play() {
 
 void Kid::doMarch() {
     printf("%s I'm marching!\n", whereAmI.c_str());
-    wantSeat = rand()%sharedModel->nChairs;
     
-    pthread_mutex_lock( &sharedModel->turn_mutex);
+    pthread_mutex_lock( &sharedModel->mtx);
+    wantSeat = rand()%sharedModel->nChairs;
     sharedModel->nMarching++;
     pthread_cond_signal( &sharedModel->turn );
-    pthread_mutex_unlock( &sharedModel->turn_mutex);
+    pthread_mutex_unlock( &sharedModel->mtx);
+    
+    printf("%s Donemarching!\n", whereAmI.c_str());
 }
 
 // -----------------------------------------------------------------------
@@ -77,7 +117,7 @@ void Kid::doSit() {
     
     int tryingThisSeat = wantSeat;
     
-    pthread_mutex_lock( &sharedModel->turn_mutex);
+    pthread_mutex_lock( &sharedModel->mtx);
     sharedModel->nMarching--;
     
     int numChairsInPlay = sharedModel->nChairs;
@@ -102,20 +142,19 @@ void Kid::doSit() {
     } while (tryingThisSeat != wantSeat);
     
     if (seatNumber == -1) {
-        // didn't get a seat, signal mum that I'm quitting
+        // signal mum that I'm quitting
         
         ss.str("");
         ss << whereAmI << " Bye from kid #" << kidID <<": no chair for me :(\n";
         cout <<ss.str();
         pthread_cond_signal( &sharedModel->turn );
-        pthread_mutex_unlock( &sharedModel->turn_mutex);
+        pthread_mutex_unlock( &sharedModel->mtx);
         pthread_exit(NULL);
     }
     
     else {
         printf("%s got chair #%d\n", whereAmI.c_str(), seatNumber);
         pthread_cond_signal( &sharedModel->turn );
-        pthread_mutex_unlock( &sharedModel->turn_mutex);
+        pthread_mutex_unlock( &sharedModel->mtx);
     }
-    
 }

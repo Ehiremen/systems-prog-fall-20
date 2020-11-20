@@ -10,6 +10,7 @@
 		CDB12FAA2558BD0100D02381 /* Kid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB12FA82558BD0100D02381 /* Kid.cpp */; };
 		CDDA4B70254C860200E4BAFE /* tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4B67254C860200E4BAFE /* tools.cpp */; };
 		CDDA4B87254C884500E4BAFE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDDA4B80254C880600E4BAFE /* main.cpp */; };
+		CDEE24FC2568683A0004A37E /* Mom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDEE24FA2568683A0004A37E /* Mom.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,6 +55,8 @@
 		CDDA4B69254C860200E4BAFE /* tools.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = tools.hpp; sourceTree = "<group>"; };
 		CDDA4B80254C880600E4BAFE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CDDA4B83254C884300E4BAFE /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		CDEE24FA2568683A0004A37E /* Mom.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mom.cpp; sourceTree = "<group>"; };
+		CDEE24FB2568683A0004A37E /* Mom.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mom.hpp; sourceTree = "<group>"; };
 		CDFDEA89250757F4005EDC57 /* Programs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Programs; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDFDEA9425075827005EDC57 /* p1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = p1.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +120,8 @@
 			children = (
 				CDDA4B67254C860200E4BAFE /* tools.cpp */,
 				CDDA4B69254C860200E4BAFE /* tools.hpp */,
+				CDEE24FA2568683A0004A37E /* Mom.cpp */,
+				CDEE24FB2568683A0004A37E /* Mom.hpp */,
 				CDB12FA62558B7CD00D02381 /* Model.hpp */,
 				CDB12FA82558BD0100D02381 /* Kid.cpp */,
 				CDB12FA92558BD0100D02381 /* Kid.hpp */,
@@ -126,9 +131,17 @@
 			path = P5;
 			sourceTree = "<group>";
 		};
+		CDEE24F82565B1D20004A37E /* P6 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = P6;
+			sourceTree = "<group>";
+		};
 		CDFDEA80250757F4005EDC57 = {
 			isa = PBXGroup;
 			children = (
+				CDEE24F82565B1D20004A37E /* P6 */,
 				CDDA4B66254C859400E4BAFE /* P5 */,
 				CD5DDC2925409C2E000C1882 /* P4 */,
 				CD8C8BC525254FFE000E209D /* P3 */,
@@ -212,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDB12FAA2558BD0100D02381 /* Kid.cpp in Sources */,
+				CDEE24FC2568683A0004A37E /* Mom.cpp in Sources */,
 				CDDA4B70254C860200E4BAFE /* tools.cpp in Sources */,
 				CDDA4B87254C884500E4BAFE /* main.cpp in Sources */,
 			);

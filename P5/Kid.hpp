@@ -20,7 +20,11 @@ private:
     sigset_t sigSet;
     int wantSeat, seatNumber;
     ostringstream ss;
-    string whereAmI = "In kid #"; 
+    string whereAmI = "In kid #";
+    
+    struct sigaction sigControl;
+    void sigHandler (int sig);
+    const char* sigName (int sig);
     
 public:
     Kid(Model* model, int ID);
