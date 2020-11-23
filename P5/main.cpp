@@ -11,14 +11,6 @@
 
 using namespace std;
 
-void* startThread (void* kid) {
-    Kid* k = (Kid*) kid;
-    k->play();
-    return NULL;
-}
-
-// -----------------------------------------------------------------------
-
 int main (int argc, char* argv[]) {
     banner();
     cerr << "\tWelcome to musical chairs!\n\n";

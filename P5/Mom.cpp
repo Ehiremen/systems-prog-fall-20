@@ -8,8 +8,20 @@
 
 #include "Mom.hpp"
 
+void* startThread (void* kid) {
+    Kid* k = (Kid*) kid;
+    k->play();
+    return NULL;
+}
+
+// -----------------------------------------------------------
+
 Mom::Mom( char* argv[] ) : numKids( stoi(argv[1]) ) {
     srand(time ( NULL ));   // Random numbers used by all threads.
+    
+    if (numKids <= 1) {
+        fatal("Not enough kids for game. Bye!\n\n");
+    }
     
     m = Model(numKids - 1);
     kids = new Kid*[numKids];
@@ -22,13 +34,15 @@ Mom::Mom( char* argv[] ) : numKids( stoi(argv[1]) ) {
     cout << "\nMum is ready for action\n";
 }
 
-// -----------------------------------------------------------------------
+// -----------------------------------------------------------
 
 Mom::~Mom() {
-    
+    for (int k=0; k<numKids; k++) delete kids[k];
+    delete[] kids;
+    cout << "\nMum has finished DJ-ing for the party :)\n";
 }
 
-// -----------------------------------------------------------------------
+// -----------------------------------------------------------
 
 void Mom::doGame() {
     playOneRound();
@@ -49,7 +63,7 @@ void Mom::doGame() {
     getKidsBack();
 }
 
-// -----------------------------------------------------------------------
+// -----------------------------------------------------------
 
 void Mom::playOneRound() {
     printf("\n-------------------------------------------\n");
@@ -81,6 +95,7 @@ void Mom::playOneRound() {
         
         if (m.nMarching == kidsThisRound) {
             pthread_mutex_unlock(&m.mtx);
+            cout << "\n\nEveryone is marching now\n\n";
             break;
         }
         pthread_mutex_unlock(&m.mtx);
@@ -116,7 +131,7 @@ void Mom::playOneRound() {
     removeLoser();
 }
 
-// -----------------------------------------------------------------------
+// -----------------------------------------------------------
 
 void Mom::removeLoser() {
     int loserID = -1;
@@ -147,10 +162,11 @@ void Mom::removeLoser() {
     printf("kid #%d is out this round\n", loserID);
 }
 
-// -----------------------------------------------------------------------
+// -----------------------------------------------------------
 
 void Mom::getKidsBack() {
     int rc, who;
+    cout << "Getting kids back\n";
     
     for (int t=0; t<numKids; t++) {
         who = kids[t]->getID();

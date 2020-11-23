@@ -14,6 +14,8 @@
 
 using namespace std;
 
+void* startThread (void* kid);
+
 class Mom {
 private:
     const int numKids;
