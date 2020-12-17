@@ -20,7 +20,7 @@ struct Model {
     pthread_mutex_t mtx  = PTHREAD_MUTEX_INITIALIZER;
     pthread_cond_t  turn        = PTHREAD_COND_INITIALIZER;
     
-    Model () {}
+    //Model () {}
     Model (int numChairs) {
         nChairs = numChairs;
         chairArrayPtr = new int[numChairs];

@@ -16,14 +16,14 @@ void* startThread (void* kid) {
 
 // -----------------------------------------------------------
 
-Mom::Mom( char* argv[] ) : numKids( stoi(argv[1]) ) {
+Mom::Mom( char* argv[] ) : numKids( stoi(argv[1]) ), m(stoi(argv[1]) - 1) {
     srand(time ( NULL ));   // Random numbers used by all threads.
     
     if (numKids <= 1) {
         fatal("Not enough kids for game. Bye!\n\n");
     }
     
-    m = Model(numKids - 1);
+    //m = Model(numKids - 1);
     kids = new Kid*[numKids];
     
     // loop to create the required number of kids
@@ -119,7 +119,7 @@ void Mom::playOneRound() {
         
         pthread_mutex_lock(&m.mtx);
         if (m.nMarching == 0) {
-            printf("In main: got all kids back this round!\n");
+            printf("In mom: got all kids back this round!\n");
             pthread_mutex_unlock(&m.mtx);
             break;
         }
@@ -134,6 +134,7 @@ void Mom::playOneRound() {
 // -----------------------------------------------------------
 
 void Mom::removeLoser() {
+    cerr << "finding loser" << endl;
     int loserID = -1;
     
     pthread_mutex_lock(&m.mtx);
