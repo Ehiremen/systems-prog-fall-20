@@ -7,14 +7,21 @@
 //
 
 #include "tools.hpp"
+#include "Mom.hpp"
 
 using namespace std;
 
 int main (int argc, char* argv[]) {
     banner();
+    cerr << "\tWelcome to musical chairs!\n\n";
     
-    cerr << "\tWelcome to musical chairs!" << endl << endl;
+    if (argc != 2) {
+        fatal("ERROR; must run game with only one extra argument (number--int--of kids!)\n");
+    }
+   
+    Mom mom(argv);
+    mom.doGame();
     
     bye();
-    return 0;
+    exit( 0 );
 }
