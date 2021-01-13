@@ -39,5 +39,5 @@ public:
     pthread_t getTid() { return tid; }
     bool isStanding() { return (seatNumber == -1); }
     void standUp() { seatNumber = -1; printf("%s standing up!\n", whereAmI.c_str()); }
-    int getSeatNumber() { return seatNumber; }
+    int getSeatNumber() { return seatNumber; }  // didn't use, ended up using isStanding() where relevant
 };
