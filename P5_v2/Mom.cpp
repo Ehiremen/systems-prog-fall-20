@@ -35,7 +35,8 @@ const char* sigName (int sig) {
 // -----------------------------------------------------------
 
 void emphasisBanner(const string str) {
-    const string tab = "    ";
+    const string tab = "    ";  // define my tab as spaces to avoid
+                                // differences across different systems
     const int msgLen = str.length();
     const int borderLen = msgLen + (4*tab.length());
     
@@ -61,18 +62,14 @@ void emphasisBanner(const string str) {
 Mom::Mom (char* argv[]): numKids(stoi(argv[1])) {
     srand(time (NULL) );    // Random numbers used by all threads.
     
-    if (numKids <= 1) {
-        fatal("Need at least 2 kids for the game. Bye!\n\n");
-    }
+    if (numKids <= 1) fatal("Need at least 2 kids for the game. Bye!\n\n");
 
     kidsStillPlaying = numKids;
     
     model = new Model(numKids - 1);
     kids = new Kid*[numKids];
     
-    for (int k=0; k<numKids; k++) {
-        kids[k] = new Kid(model, k);
-    }
+    for (int k=0; k<numKids; k++) kids[k] = new Kid(model, k);
     
     printf("In Mom: Game created for %d kids!\n", numKids);
     
@@ -83,7 +80,7 @@ Mom::Mom (char* argv[]): numKids(stoi(argv[1])) {
 
 Mom::~Mom() {
     for (int k=0; k<numKids; k++) delete kids[k];
-    delete[] kids;
+    delete [] kids;
     delete model;
     cout << "\nParty's over, kids!\n";
 }
@@ -128,8 +125,6 @@ void Mom::startMusic(Model* m, Kid* players[]){
         if (rc < 0) fatal("ERROR; returned from Kid #%d pthread_kill(SIGUSR1): %d", players[k]->getID(), rc);
     }
     
-//    pthread_mutex_lock(&m->mtx);
-    
     int localMarching;
     for (;;) {
         pthread_mutex_lock(&m->mtx);
@@ -144,8 +139,6 @@ void Mom::startMusic(Model* m, Kid* players[]){
             break;
         }
     }
-     
-//    pthread_mutex_unlock(&m->mtx);
 }
 
 // -----------------------------------------------------------
@@ -182,7 +175,7 @@ void Mom::removeLoser() {
     int loserID = -1;
     
     for (int p=0; p<kidsStillPlaying; p++) {
-        if (kids[p]->isStanding()) {
+        if (kids[p]->isStanding()) {    // loser must be standing after round
             loserID = kids[p]->getID();
             swap(kids[p], kids[kidsStillPlaying-1]);
             pthread_mutex_lock(&model->mtx);
@@ -204,7 +197,6 @@ void Mom::removeLoser() {
             cout << "Couldn't SIGQUIT kids[0]\n";
         }
     }
-//    pthread_mutex_unlock(&model->mtx);
 }
 
 // -----------------------------------------------------------

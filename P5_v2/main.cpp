@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
     emphasisBanner("WELCOME TO MUSICAL THREADS!");
     
     if (argc != 2) {
-        fatal("ERROR; must run game with only one extra argument (number--int--of kids!)\n");
+        fatal("ERROR; must run game with only one extra argument (number--int--of kids!)\n\tstyle: %s 5\n\n", argv[0]);
     }
    
     Mom mom(argv);

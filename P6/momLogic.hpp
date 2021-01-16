@@ -13,25 +13,40 @@
 
 using namespace std;
 
-struct Player {
-        string name = "??";
-        bool alive = false;
-        FILE* kidIn;   // Stream for kid to send to mom.
-        FILE* kidOut;  // Stream for mom to send to kid.
-};
+const int bufferLen = 100;
 
 class MomLogic {
 private:
+    struct Player {
+            string name = "??";
+            bool alive = true;
+            FILE* kidIn;   // Stream for kid to send to mom.
+            FILE* kidOut;  // Stream for mom to send to kid.
+    };
+    
+    toPoll* kidSocks;
+    toPoll* momSock;
     char* chairs;
-    int counter;
     Player* players;
+    int counter, startingN, playersAlive;
     // C-streams, buffers, and everything else needed to communicate between one of the MomLogic functions and another
+    
+    const char chairFree = '1';
+    const char chairTaken = '0';
+    
+    // variables for handling socket i/o
+    char buffer[bufferLen];
+    int nBytes = 0;
+    
+    void playOneRound();
     void initRound ();
     void stopTheMusic ();
-    void checkSockets ();
+    void checkSockets () {}
+    void openPlayerIOStreams();
+    void getKidsNames();
     
 public:
-    MomLogic ();
+    MomLogic (toPoll* momSock, toPoll* socks, int N);
     ~MomLogic ();
-    void run ();
+    void run();
 };

@@ -25,7 +25,6 @@ private:
     ostringstream ss;
     string whereAmI;
     
-    void sigHandler( int sig );
     void clearSS() { ss.str(string()); }
     
 public:

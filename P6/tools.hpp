@@ -9,7 +9,7 @@
 // Local definitions.
 // Please enter your own name.
 // ---------------------------------------------------------------
-#define NAME    "Ehis and Jenny"
+#define NAME    "Ehis"
 #define CLASS   "CSCI 4547"
 
 #include <iostream>

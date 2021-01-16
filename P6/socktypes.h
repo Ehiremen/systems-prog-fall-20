@@ -3,11 +3,6 @@
  *  Created by Alice Fischer on 3/15/10.
  *  Useful things for working with sockets.
  */
-#include <unistd.h>
-#include <stdbool.h>
-#include <getopt.h>
-#include <netdb.h>
-#include <fcntl.h>
 
 #include <sys/types.h>
 #include <sys/dir.h>
@@ -17,15 +12,23 @@
 #include <sys/errno.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <sys/un.h>
 
-typedef struct pollfd        toPoll;
+#include <netdb.h>
 
-//typedef struct connection {
-//    int          worker;    // fd of working socket
-//    sockInfo  caller;    // client's socket info
-//    socklen_t fromlen;  // client's socket length
-//    bool      active;    // true if client is still around
-//} connection;
+//#define PORT 1234
+
+typedef struct sockaddr_in  sockInfo;
+typedef struct sockaddr     sockUnion;
+typedef struct hostent      hostInfo;
+typedef struct pollfd       toPoll;
+
+typedef struct connection {
+    int         worker;    // fd of working socket
+    sockInfo    caller;    // client's socket info
+    socklen_t   fromlen;  // client's socket length
+    bool        active;    // true if client is still around
+} connection;
 
 
 /* -----------------------------------------

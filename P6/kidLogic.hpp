@@ -14,6 +14,8 @@
 
 using namespace std;
 
+const int bufferLen = 100;
+
 enum StateT { NEWBIE, MARCHING, SEEKING, SITTING, KIDQUIT };
 const string stateName[] = {
     "NEWBIE", "MARCHING", "SEEKING", "SITTING", "KIDQUIT"
@@ -22,11 +24,18 @@ const string stateName[] = {
 class KidLogic {
 private:
     int momFd;
-    FILE* momIn, * momOut;
+//    FILE* momIn, * momOut;
+    FILE* mom;
     int nChairs;
     string kidName;
     char* command;
     StateT pcol = NEWBIE;
+    int currentChair = -1;
+    
+    // variables for handling socket i/o
+    char buffer[bufferLen];
+    int nBytes = 0;
+
     
     void doCommand ();
     void doGetup ();
@@ -37,7 +46,11 @@ private:
     void doNack ();
     
 public:
-    KidLogic (int fd, string name);
-    ~KidLogic ();
+    KidLogic (int momFd, string name);
+    ~KidLogic (){
+//        fclose(momIn);
+//        fclose(momOut);
+    }
     void run ();
+    string getName() { return kidName; }
 };

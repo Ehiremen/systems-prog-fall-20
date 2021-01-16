@@ -16,6 +16,7 @@ const char* sigName (int sig);
 Kid::Kid(Model* model, int ID) : sharedModel(model), kidID(ID) {
     seatNumber = -1;
     
+    // add signals to listen for
     sigemptyset(&sigSet);
     sigaddset(&sigSet, SIGUSR1);
     sigaddset(&sigSet, SIGUSR2);
@@ -25,9 +26,7 @@ Kid::Kid(Model* model, int ID) : sharedModel(model), kidID(ID) {
     
     int rc = pthread_create( &tid, NULL, startThread, (void*) this );
     if(rc) fatal ("ERROR; return code from pthread_create() is %d", rc);
-    else {
-        printf("%s Created kid #%d\n", whereAmI.c_str(), kidID);
-    }
+    else printf("%s Created kid #%d\n", whereAmI.c_str(), kidID);
 }
 
 // -----------------------------------------------------------
@@ -45,7 +44,7 @@ void Kid::play() {
     
     for (;;) {
         rc = sigwait(&sigSet, &sig);
-        if (rc == -1) { fatal("Can't handle this signal\n"); }
+        if (rc == -1) fatal("Can't handle this signal\n");
         
         else {
             printf("%s received Sig: %s\n", whereAmI.c_str(), sigName(sig));
@@ -94,6 +93,7 @@ void Kid::doSit() {
         // chair is(possibly) free!
         if (sharedModel->chairArray[tryingThisSeat] == -1) {
             pthread_mutex_lock(&sharedModel->mtx);
+            
             if (sharedModel->chairArray[tryingThisSeat] != -1) {
                 pthread_mutex_unlock( &sharedModel->mtx );
             }

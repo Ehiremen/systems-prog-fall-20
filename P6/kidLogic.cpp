@@ -8,15 +8,47 @@
 
 #include "kidLogic.hpp"
 
-void KidLogic::run() {
-    do {
-        doCommand();
-    } while (pcol != KIDQUIT);
+KidLogic::KidLogic (int momFd, string name) : momFd(momFd), kidName(name) {
+//    momIn = fdopen( momFd, "r" );
+//    momOut = fdopen( momFd, "w" );
+    mom = fdopen(momFd, "r+");
+    cout << "writing to mom\n";
+    
+//    * weird that fprintf() doesn't write to mom's stream, but write() does...
+//    fprintf(momOut, "%s", kidName.c_str());
+    cout << "MomFD = " << momFd << endl;
+    nBytes = write( momFd, kidName.c_str(), kidName.size() );
+    cout << "mom knows my name!\n\n";
 }
 
+// ---------------------------------------------------
+
+void KidLogic::run() {
+    fprintf(mom, "In Kid, printing to mom\n");
+    sleep(3);
+    cout << "Done sleeping \n";
+//    do {
+        doCommand();
+//    } while (pcol != KIDQUIT);
+}
+
+// ---------------------------------------------------
+
 void KidLogic::doCommand() {
-    int status = fscanf( momIn, "%6s", command );
-    if (status!=1) fatalp("Error reading command");
+//    if(recv(momFd, buffer, bufferLen, MSG_PEEK) == 0) return;
+    cout << "In " << kidName << " reading from mom\n";
+//    bzero(buffer, bufferLen);
+    nBytes = read(momFd, buffer, sizeof(buffer));
+    
+//    fscanf(momOut, "%s", buffer);
+    
+//    int status = fscanf(momIn, "%6s", buffer);
+//    fscanf(momIn, "%6s", buffer);
+//    scanf("%6s", buffer);
+    command = buffer;
+    
+    cout << "In " << kidName << " done reading from mom\n\n";
+//    if (status!=1) fatalp("Error reading command");
     cout << "State = "<< stateName[pcol] << ", Command is: " <<command << endl ;
     try{
         if (strcmp( "GETUP", command) == 0) doGetup();
@@ -30,10 +62,19 @@ void KidLogic::doCommand() {
     catch (string& s) {
         cout << s <<" ["<< command <<"]\n";
         exit(1); }
+    catch (...) {
+        cout << "weird shit is happening\n";
+    }
 }
 
+// ---------------------------------------------------
+
 void KidLogic::doGetup () {
+    cout << "standing up\n"; return;
     
+    int status = fscanf( mom, "%d", &nChairs );
+    currentChair = -1;
+    if (status!=1) fatalp("Error reading command");
 }
 
 void KidLogic::doSit (){
