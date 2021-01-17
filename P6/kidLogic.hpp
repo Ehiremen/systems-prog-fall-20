@@ -8,6 +8,7 @@
 
 
 #pragma once
+#include <vector>
 #include "protocol.hpp"
 #include "socktypes.h"
 #include "tools.hpp"
@@ -24,13 +25,12 @@ const string stateName[] = {
 class KidLogic {
 private:
     int momFd;
-//    FILE* momIn, * momOut;
-    FILE* mom;
+    FILE* momIn, * momOut;
     int nChairs;
     string kidName;
     char* command;
     StateT pcol = NEWBIE;
-    int currentChair = -1;
+    int currentChair = -1, wantThisChair = 0;
     
     // variables for handling socket i/o
     char buffer[bufferLen];
@@ -39,7 +39,7 @@ private:
     
     void doCommand ();
     void doGetup ();
-    void doSit ();
+    void doSit (bool fromNack = false, int choiceFromNack = 0);
     void doAck ();
     void doQuit ();
     void doPrize ();
@@ -47,10 +47,7 @@ private:
     
 public:
     KidLogic (int momFd, string name);
-    ~KidLogic (){
-//        fclose(momIn);
-//        fclose(momOut);
-    }
+    ~KidLogic () = default;
     void run ();
     string getName() { return kidName; }
 };

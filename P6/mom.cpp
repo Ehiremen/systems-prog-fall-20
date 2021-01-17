@@ -20,6 +20,11 @@ int doService(toPoll* p){ return -1; }
 int main (int argc, char* argv[]) {
     banner();
     
+    // echo command
+    cout << "Command: ";
+    for (int k=0; k<argc; k++) cout << argv[k] << " ";
+    cout << "\n";
+    
     // validate args
     if (argc != 2) {
         fatal("I only want to know how many kids are coming (<= %d)\n", limitN);
@@ -125,8 +130,7 @@ int main (int argc, char* argv[]) {
     // allow reading AND writing on welcome socket
     welcome->events = POLLIN | POLLOUT;
         
-    MomLogic momLogic(welcome, worker, numExpected);
-    cout << "In mom: debug line\n";
+    MomLogic momLogic(worker, numExpected);
     momLogic.run();
     
     // close all except the welcomeSocket

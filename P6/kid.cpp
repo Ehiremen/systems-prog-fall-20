@@ -2,8 +2,8 @@
 //  kid.cpp
 //  Programs
 //
-//  Created by Ehiremen Ekore on 12/10/20.
-//  Copyright © 2020 Ehiremen Ekore. All rights reserved.
+//  Original code gotten from Alice Fischer lecture code examples
+//  Modified by Ehiremen Ekore on 12/10/20.
 //
 
 #include <iostream>
@@ -17,7 +17,11 @@ void printSockInfo(char* who, sockInfo sock);
 
 int main (int argc, char* argv[]) {
     banner();
-    cout << "Kid!" << endl;
+    
+    // echo command
+    cout << "Command: ";
+    for (int k=0; k<argc; k++) cout << argv[k] << " ";
+    cout << "\n";
     
     if (argc != 3) {
         fatal("expected: %s hostname myName\n", argv[0]);
@@ -63,8 +67,7 @@ int main (int argc, char* argv[]) {
     // wait for server ot acknowledge message
     char buffer[bufferLen];
     int nBytes = read(clientSock, buffer, bufferLen);
-    if (nBytes >= 0) cout << nBytes << " " << buffer;
-    else fatal("%s: Error while reading from socket.", proc.c_str());
+    if (nBytes<0) fatal("%s: Error while reading from socket.", proc.c_str());
     
     
     KidLogic kidLogic(clientSock, myName);

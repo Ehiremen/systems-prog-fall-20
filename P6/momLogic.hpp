@@ -20,33 +20,32 @@ private:
     struct Player {
             string name = "??";
             bool alive = true;
+            bool standing = false;
             FILE* kidIn;   // Stream for kid to send to mom.
             FILE* kidOut;  // Stream for mom to send to kid.
     };
     
     toPoll* kidSocks;
-    toPoll* momSock;
     char* chairs;
     Player* players;
-    int counter, startingN, playersAlive;
+    int freeChairsThisRound, startingN, playersThisRound;
+    bool gameOver = false;
     // C-streams, buffers, and everything else needed to communicate between one of the MomLogic functions and another
-    
-    const char chairFree = '1';
-    const char chairTaken = '0';
     
     // variables for handling socket i/o
     char buffer[bufferLen];
-    int nBytes = 0;
     
     void playOneRound();
-    void initRound ();
-    void stopTheMusic ();
-    void checkSockets () {}
+    void initRound();
     void openPlayerIOStreams();
     void getKidsNames();
+    void stopTheMusic();
+    void doPoll();
+    void handleWantMessage(int id);
+    void quitStandingPlayers();
     
 public:
-    MomLogic (toPoll* momSock, toPoll* socks, int N);
+    MomLogic (toPoll* socks, int N);
     ~MomLogic ();
     void run();
 };

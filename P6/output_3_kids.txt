@@ -1,0 +1,239 @@
+---------------------------------------------------------------
+	Ehis
+	CSCI 4547
+	Sun Jan 17 2021	16:26:58
+---------------------------------------------------------------
+Command: mom 3 
+server is lexy.local
+Opened socket as fd (4) on port (1234) for stream i/o
+welcome socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 0.0.0.0
+	sin_port          = 1234
+	}
+Just called listen(); now waiting for a client to show up
+working--from newCaller socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 61754
+	}
+working--from newCaller socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 61883
+	}
+working--from newCaller socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 62528
+	}
+In MomLogic: opening io streams
+player 0 fd = 5
+In MomLogic: opening io streams
+player 1 fd = 6
+In MomLogic: opening io streams
+player 2 fd = 7
+In MomLogic: Running
+player 0 got name: Lexy
+player 1 got name: Steph
+player 2 got name: Ehis
+In MomLogic: Got names
+
+
+===============NEW ROUND===============
+In MomLogic: chairs are free!
+In MomLogic: GETUP sent to all kids
+In MomLogic: ACK sent to Lexy
+In MomLogic: ACK sent to Ehis
+In MomLogic: sent "QUIT" to all standing kids
+
+===============NEW ROUND===============
+In MomLogic: chairs are free!
+In MomLogic: GETUP sent to all kids
+In MomLogic: ACK sent to Ehis
+In MomLogic: sent "QUIT" to all standing kids
+
+========================================
+
+In MomLogic: We have a winner!
+Congrats, Ehis
+
+---------------------------------------------------------------
+Normal termination.
+
+
+---------------------------------------------------------------
+	Ehis
+	CSCI 4547
+	Sun Jan 17 2021	16:27:00
+---------------------------------------------------------------
+Command: kid lexy.local Lexy 
+client socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 1234
+	}
+Connected on clientSock: 3
+kid: connection established to lexy.local.
+In Lexy: writing to mom
+In Lexy: mom knows my name!
+
+Taking a quick nap
+Done sleeping
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = NEWBIE, Command is: GETUP
+==============================
+In Lexy: got GETUP
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = MARCHING, Command is: SIT
+In Lexy: got SIT
+In Lexy: asked for seat 0
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: ACK
+In Lexy: got ACK
+In Lexy: Yay, I got a seat!
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Lexy: got GETUP
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = MARCHING, Command is: SIT
+In Lexy: got SIT
+In Lexy: asked for seat 0
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: QUIT
+Lexy: I'm out of the game :(
+
+
+---------------------------------------------------------------
+Normal termination.
+
+---------------------------------------------------------------
+	Ehis
+	CSCI 4547
+	Sun Jan 17 2021	16:27:02
+---------------------------------------------------------------
+Command: kid lexy.local Steph 
+client socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 1234
+	}
+Connected on clientSock: 3
+kid: connection established to lexy.local.
+In Steph: writing to mom
+In Steph: mom knows my name!
+
+Taking a quick nap
+Done sleeping
+
+In Steph: reading from mom
+In Steph: done reading from mom
+State = NEWBIE, Command is: GETUP
+==============================
+In Steph: got GETUP
+
+In Steph: reading from mom
+In Steph: done reading from mom
+State = MARCHING, Command is: SIT
+In Steph: got SIT
+In Steph: asked for seat 0
+
+In Steph: reading from mom
+In Steph: done reading from mom
+State = SEEKING, Command is: NACK
+In Steph: got NACK
+In Steph: asked for seat 1
+
+In Steph: reading from mom
+In Steph: done reading from mom
+State = SEEKING, Command is: QUIT
+Steph: I'm out of the game :(
+
+
+---------------------------------------------------------------
+Normal termination.
+
+---------------------------------------------------------------
+	Ehis
+	CSCI 4547
+	Sun Jan 17 2021	16:27:12
+---------------------------------------------------------------
+Command: kid lexy.local Ehis 
+client socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 1234
+	}
+Connected on clientSock: 3
+kid: connection established to lexy.local.
+In Ehis: writing to mom
+In Ehis: mom knows my name!
+
+Taking a quick nap
+Done sleeping
+
+In Ehis: reading from mom
+In Ehis: done reading from mom
+State = NEWBIE, Command is: GETUP
+==============================
+In Ehis: got GETUP
+
+In Ehis: reading from mom
+In Ehis: done reading from mom
+State = MARCHING, Command is: SIT
+In Ehis: got SIT
+In Ehis: asked for seat 0
+
+In Ehis: reading from mom
+In Ehis: done reading from mom
+State = SEEKING, Command is: NACK
+In Ehis: got NACK
+In Ehis: asked for seat 1
+
+In Ehis: reading from mom
+In Ehis: done reading from mom
+State = SEEKING, Command is: ACK
+In Ehis: got ACK
+In Ehis: Yay, I got a seat!
+
+In Ehis: reading from mom
+In Ehis: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Ehis: got GETUP
+
+In Ehis: reading from mom
+In Ehis: done reading from mom
+State = MARCHING, Command is: SIT
+In Ehis: got SIT
+In Ehis: asked for seat 0
+
+In Ehis: reading from mom
+In Ehis: done reading from mom
+State = SEEKING, Command is: ACK
+In Ehis: got ACK
+In Ehis: Yay, I got a seat!
+
+In Ehis: reading from mom
+In Ehis: done reading from mom
+State = SITTING, Command is: PRIZE
+
+
+Ehis: OMG! No way I won!!!
+
+
+---------------------------------------------------------------
+Normal termination.

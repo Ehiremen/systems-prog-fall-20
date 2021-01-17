@@ -1,0 +1,1594 @@
+
+---------------------------------------------------------------
+	Ehis
+	CSCI 4547
+	Sun Jan 17 2021	16:33:17
+---------------------------------------------------------------
+Command: mom 10 
+server is lexy.local
+Opened socket as fd (4) on port (1234) for stream i/o
+welcome socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 0.0.0.0
+	sin_port          = 1234
+	}
+Just called listen(); now waiting for a client to show up
+working--from newCaller socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 53413
+	}
+working--from newCaller socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 53734
+	}
+working--from newCaller socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 54312
+	}
+working--from newCaller socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 54761
+	}
+working--from newCaller socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 55923
+	}
+working--from newCaller socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 56245
+	}
+working--from newCaller socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 57015
+	}
+working--from newCaller socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 57594
+	}
+working--from newCaller socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 57916
+	}
+working--from newCaller socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 58301
+	}
+In MomLogic: opening io streams
+player 0 fd = 5
+In MomLogic: opening io streams
+player 1 fd = 6
+In MomLogic: opening io streams
+player 2 fd = 7
+In MomLogic: opening io streams
+player 3 fd = 8
+In MomLogic: opening io streams
+player 4 fd = 9
+In MomLogic: opening io streams
+player 5 fd = 10
+In MomLogic: opening io streams
+player 6 fd = 11
+In MomLogic: opening io streams
+player 7 fd = 12
+In MomLogic: opening io streams
+player 8 fd = 13
+In MomLogic: opening io streams
+player 9 fd = 14
+In MomLogic: Running
+player 0 got name: Alex
+player 1 got name: Andy
+player 2 got name: Lexy
+player 3 got name: Grant
+player 4 got name: Steph
+player 5 got name: Alice
+player 6 got name: Ehis
+player 7 got name: John
+player 8 got name: Ronald
+player 9 got name: Noc
+In MomLogic: Got names
+
+
+===============NEW ROUND===============
+In MomLogic: chairs are free!
+In MomLogic: GETUP sent to all kids
+In MomLogic: ACK sent to Alex
+In MomLogic: ACK sent to Andy
+In MomLogic: ACK sent to Lexy
+In MomLogic: ACK sent to Alice
+In MomLogic: ACK sent to John
+In MomLogic: ACK sent to Steph
+In MomLogic: ACK sent to Ronald
+In MomLogic: ACK sent to Noc
+In MomLogic: ACK sent to Grant
+In MomLogic: Ehis is out this round
+In MomLogic: sent "QUIT" to all standing kids
+
+===============NEW ROUND===============
+In MomLogic: chairs are free!
+In MomLogic: GETUP sent to all kids
+In MomLogic: ACK sent to Alex
+In MomLogic: ACK sent to Andy
+In MomLogic: ACK sent to Alice
+In MomLogic: ACK sent to Grant
+In MomLogic: ACK sent to John
+In MomLogic: ACK sent to Ronald
+In MomLogic: ACK sent to Noc
+In MomLogic: ACK sent to Lexy
+In MomLogic: sent "QUIT" to all standing kids
+
+===============NEW ROUND===============
+In MomLogic: chairs are free!
+In MomLogic: GETUP sent to all kids
+In MomLogic: ACK sent to Alex
+In MomLogic: ACK sent to Andy
+In MomLogic: ACK sent to Grant
+In MomLogic: ACK sent to Alice
+In MomLogic: ACK sent to Ronald
+In MomLogic: ACK sent to Lexy
+In MomLogic: ACK sent to John
+In MomLogic: sent "QUIT" to all standing kids
+
+===============NEW ROUND===============
+In MomLogic: chairs are free!
+In MomLogic: GETUP sent to all kids
+In MomLogic: ACK sent to Alex
+In MomLogic: ACK sent to Andy
+In MomLogic: ACK sent to Lexy
+In MomLogic: ACK sent to Grant
+In MomLogic: ACK sent to Ronald
+In MomLogic: ACK sent to Alice
+In MomLogic: sent "QUIT" to all standing kids
+
+===============NEW ROUND===============
+In MomLogic: chairs are free!
+In MomLogic: GETUP sent to all kids
+In MomLogic: ACK sent to Alex
+In MomLogic: ACK sent to Andy
+In MomLogic: ACK sent to Grant
+In MomLogic: ACK sent to Alice
+In MomLogic: ACK sent to Lexy
+In MomLogic: Ronald is out this round
+In MomLogic: sent "QUIT" to all standing kids
+
+===============NEW ROUND===============
+In MomLogic: chairs are free!
+In MomLogic: GETUP sent to all kids
+In MomLogic: ACK sent to Alex
+In MomLogic: ACK sent to Lexy
+In MomLogic: ACK sent to Grant
+In MomLogic: ACK sent to Alice
+In MomLogic: sent "QUIT" to all standing kids
+
+===============NEW ROUND===============
+In MomLogic: chairs are free!
+In MomLogic: GETUP sent to all kids
+In MomLogic: ACK sent to Alex
+In MomLogic: ACK sent to Lexy
+In MomLogic: ACK sent to Grant
+In MomLogic: Alice is out this round
+In MomLogic: sent "QUIT" to all standing kids
+
+===============NEW ROUND===============
+In MomLogic: chairs are free!
+In MomLogic: GETUP sent to all kids
+In MomLogic: ACK sent to Alex
+In MomLogic: ACK sent to Lexy
+In MomLogic: Grant is out this round
+In MomLogic: sent "QUIT" to all standing kids
+
+===============NEW ROUND===============
+In MomLogic: chairs are free!
+In MomLogic: GETUP sent to all kids
+In MomLogic: ACK sent to Lexy
+In MomLogic: sent "QUIT" to all standing kids
+
+========================================
+
+In MomLogic: We have a winner!
+Congrats, Lexy
+
+---------------------------------------------------------------
+Normal termination.
+
+
+---------------------------------------------------------------
+	Ehis
+	CSCI 4547
+	Sun Jan 17 2021	16:34:02
+---------------------------------------------------------------
+Command: kid lexy.local Steph 
+client socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 1234
+	}
+Connected on clientSock: 3
+kid: connection established to lexy.local.
+In Steph: writing to mom
+In Steph: mom knows my name!
+
+Taking a quick nap
+Done sleeping
+
+In Steph: reading from mom
+In Steph: done reading from mom
+State = NEWBIE, Command is: GETUP
+==============================
+In Steph: got GETUP
+
+In Steph: reading from mom
+In Steph: done reading from mom
+State = MARCHING, Command is: SIT
+In Steph: got SIT
+In Steph: asked for seat 5
+
+In Steph: reading from mom
+In Steph: done reading from mom
+State = SEEKING, Command is: NACK
+In Steph: got NACK
+In Steph: asked for seat 0
+
+In Steph: reading from mom
+In Steph: done reading from mom
+State = SEEKING, Command is: ACK
+In Steph: got ACK
+In Steph: Yay, I got a seat!
+
+In Steph: reading from mom
+In Steph: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Steph: got GETUP
+
+In Steph: reading from mom
+In Steph: done reading from mom
+State = MARCHING, Command is: SIT
+In Steph: got SIT
+In Steph: asked for seat 6
+
+In Steph: reading from mom
+In Steph: done reading from mom
+State = SEEKING, Command is: NACK
+In Steph: got NACK
+In Steph: asked for seat 0
+
+In Steph: reading from mom
+In Steph: done reading from mom
+State = SEEKING, Command is: NACK
+In Steph: got NACK
+In Steph: asked for seat 4
+
+In Steph: reading from mom
+In Steph: done reading from mom
+State = SEEKING, Command is: QUIT
+Steph: I'm out of the game :(
+
+
+---------------------------------------------------------------
+Normal termination.
+
+---------------------------------------------------------------
+	Ehis
+	CSCI 4547
+	Sun Jan 17 2021	16:33:28
+---------------------------------------------------------------
+Command: kid lexy.local Andy 
+client socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 1234
+	}
+Connected on clientSock: 3
+kid: connection established to lexy.local.
+In Andy: writing to mom
+In Andy: mom knows my name!
+
+Taking a quick nap
+Done sleeping
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = NEWBIE, Command is: GETUP
+==============================
+In Andy: got GETUP
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = MARCHING, Command is: SIT
+In Andy: got SIT
+In Andy: asked for seat 5
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = SEEKING, Command is: ACK
+In Andy: got ACK
+In Andy: Yay, I got a seat!
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Andy: got GETUP
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = MARCHING, Command is: SIT
+In Andy: got SIT
+In Andy: asked for seat 7
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = SEEKING, Command is: ACK
+In Andy: got ACK
+In Andy: Yay, I got a seat!
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Andy: got GETUP
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = MARCHING, Command is: SIT
+In Andy: got SIT
+In Andy: asked for seat 3
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = SEEKING, Command is: ACK
+In Andy: got ACK
+In Andy: Yay, I got a seat!
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Andy: got GETUP
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = MARCHING, Command is: SIT
+In Andy: got SIT
+In Andy: asked for seat 2
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = SEEKING, Command is: ACK
+In Andy: got ACK
+In Andy: Yay, I got a seat!
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Andy: got GETUP
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = MARCHING, Command is: SIT
+In Andy: got SIT
+In Andy: asked for seat 3
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = SEEKING, Command is: ACK
+In Andy: got ACK
+In Andy: Yay, I got a seat!
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Andy: got GETUP
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = MARCHING, Command is: SIT
+In Andy: got SIT
+In Andy: asked for seat 3
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = SEEKING, Command is: NACK
+In Andy: got NACK
+In Andy: asked for seat 0
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = SEEKING, Command is: NACK
+In Andy: got NACK
+In Andy: asked for seat 1
+
+In Andy: reading from mom
+In Andy: done reading from mom
+State = SEEKING, Command is: QUIT
+Andy: I'm out of the game :(
+
+
+---------------------------------------------------------------
+Normal termination.
+
+---------------------------------------------------------------
+	Ehis
+	CSCI 4547
+	Sun Jan 17 2021	16:33:37
+---------------------------------------------------------------
+Command: kid lexy.local Lexy 
+client socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 1234
+	}
+Connected on clientSock: 3
+kid: connection established to lexy.local.
+In Lexy: writing to mom
+In Lexy: mom knows my name!
+
+Taking a quick nap
+Done sleeping
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = NEWBIE, Command is: GETUP
+==============================
+In Lexy: got GETUP
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = MARCHING, Command is: SIT
+In Lexy: got SIT
+In Lexy: asked for seat 4
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: ACK
+In Lexy: got ACK
+In Lexy: Yay, I got a seat!
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Lexy: got GETUP
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = MARCHING, Command is: SIT
+In Lexy: got SIT
+In Lexy: asked for seat 6
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: NACK
+In Lexy: got NACK
+In Lexy: asked for seat 1
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: NACK
+In Lexy: got NACK
+In Lexy: asked for seat 4
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: ACK
+In Lexy: got ACK
+In Lexy: Yay, I got a seat!
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Lexy: got GETUP
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = MARCHING, Command is: SIT
+In Lexy: got SIT
+In Lexy: asked for seat 4
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: NACK
+In Lexy: got NACK
+In Lexy: asked for seat 1
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: NACK
+In Lexy: got NACK
+In Lexy: asked for seat 5
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: ACK
+In Lexy: got ACK
+In Lexy: Yay, I got a seat!
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Lexy: got GETUP
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = MARCHING, Command is: SIT
+In Lexy: got SIT
+In Lexy: asked for seat 5
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: ACK
+In Lexy: got ACK
+In Lexy: Yay, I got a seat!
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Lexy: got GETUP
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = MARCHING, Command is: SIT
+In Lexy: got SIT
+In Lexy: asked for seat 2
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: NACK
+In Lexy: got NACK
+In Lexy: asked for seat 1
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: NACK
+In Lexy: got NACK
+In Lexy: asked for seat 0
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: ACK
+In Lexy: got ACK
+In Lexy: Yay, I got a seat!
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Lexy: got GETUP
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = MARCHING, Command is: SIT
+In Lexy: got SIT
+In Lexy: asked for seat 0
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: ACK
+In Lexy: got ACK
+In Lexy: Yay, I got a seat!
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Lexy: got GETUP
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = MARCHING, Command is: SIT
+In Lexy: got SIT
+In Lexy: asked for seat 1
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: ACK
+In Lexy: got ACK
+In Lexy: Yay, I got a seat!
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Lexy: got GETUP
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = MARCHING, Command is: SIT
+In Lexy: got SIT
+In Lexy: asked for seat 0
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: ACK
+In Lexy: got ACK
+In Lexy: Yay, I got a seat!
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Lexy: got GETUP
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = MARCHING, Command is: SIT
+In Lexy: got SIT
+In Lexy: asked for seat 0
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SEEKING, Command is: ACK
+In Lexy: got ACK
+In Lexy: Yay, I got a seat!
+
+In Lexy: reading from mom
+In Lexy: done reading from mom
+State = SITTING, Command is: PRIZE
+
+
+Lexy: OMG! No way I won!!!
+
+
+---------------------------------------------------------------
+Normal termination.
+
+---------------------------------------------------------------
+	Ehis
+	CSCI 4547
+	Sun Jan 17 2021	16:33:44
+---------------------------------------------------------------
+Command: kid lexy.local Grant 
+client socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 1234
+	}
+Connected on clientSock: 3
+kid: connection established to lexy.local.
+In Grant: writing to mom
+In Grant: mom knows my name!
+
+Taking a quick nap
+Done sleeping
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = NEWBIE, Command is: GETUP
+==============================
+In Grant: got GETUP
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = MARCHING, Command is: SIT
+In Grant: got SIT
+In Grant: asked for seat 7
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SEEKING, Command is: NACK
+In Grant: got NACK
+In Grant: asked for seat 1
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SEEKING, Command is: NACK
+In Grant: got NACK
+In Grant: asked for seat 2
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SEEKING, Command is: NACK
+In Grant: got NACK
+In Grant: asked for seat 6
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SEEKING, Command is: ACK
+In Grant: got ACK
+In Grant: Yay, I got a seat!
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Grant: got GETUP
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = MARCHING, Command is: SIT
+In Grant: got SIT
+In Grant: asked for seat 2
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SEEKING, Command is: ACK
+In Grant: got ACK
+In Grant: Yay, I got a seat!
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Grant: got GETUP
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = MARCHING, Command is: SIT
+In Grant: got SIT
+In Grant: asked for seat 0
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SEEKING, Command is: ACK
+In Grant: got ACK
+In Grant: Yay, I got a seat!
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Grant: got GETUP
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = MARCHING, Command is: SIT
+In Grant: got SIT
+In Grant: asked for seat 4
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SEEKING, Command is: ACK
+In Grant: got ACK
+In Grant: Yay, I got a seat!
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Grant: got GETUP
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = MARCHING, Command is: SIT
+In Grant: got SIT
+In Grant: asked for seat 1
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SEEKING, Command is: ACK
+In Grant: got ACK
+In Grant: Yay, I got a seat!
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Grant: got GETUP
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = MARCHING, Command is: SIT
+In Grant: got SIT
+In Grant: asked for seat 2
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SEEKING, Command is: ACK
+In Grant: got ACK
+In Grant: Yay, I got a seat!
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Grant: got GETUP
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = MARCHING, Command is: SIT
+In Grant: got SIT
+In Grant: asked for seat 1
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SEEKING, Command is: NACK
+In Grant: got NACK
+In Grant: asked for seat 2
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SEEKING, Command is: ACK
+In Grant: got ACK
+In Grant: Yay, I got a seat!
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Grant: got GETUP
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = MARCHING, Command is: SIT
+In Grant: got SIT
+In Grant: asked for seat 0
+
+In Grant: reading from mom
+In Grant: done reading from mom
+State = SEEKING, Command is: QUIT
+Grant: I'm out of the game :(
+
+
+---------------------------------------------------------------
+Normal termination.
+
+---------------------------------------------------------------
+	Ehis
+	CSCI 4547
+	Sun Jan 17 2021	16:33:23
+---------------------------------------------------------------
+Command: kid lexy.local Alex 
+client socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 1234
+	}
+Connected on clientSock: 3
+kid: connection established to lexy.local.
+In Alex: writing to mom
+In Alex: mom knows my name!
+
+Taking a quick nap
+Done sleeping
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = NEWBIE, Command is: GETUP
+==============================
+In Alex: got GETUP
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = MARCHING, Command is: SIT
+In Alex: got SIT
+In Alex: asked for seat 7
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SEEKING, Command is: ACK
+In Alex: got ACK
+In Alex: Yay, I got a seat!
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Alex: got GETUP
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = MARCHING, Command is: SIT
+In Alex: got SIT
+In Alex: asked for seat 6
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SEEKING, Command is: ACK
+In Alex: got ACK
+In Alex: Yay, I got a seat!
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Alex: got GETUP
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = MARCHING, Command is: SIT
+In Alex: got SIT
+In Alex: asked for seat 4
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SEEKING, Command is: ACK
+In Alex: got ACK
+In Alex: Yay, I got a seat!
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Alex: got GETUP
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = MARCHING, Command is: SIT
+In Alex: got SIT
+In Alex: asked for seat 3
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SEEKING, Command is: ACK
+In Alex: got ACK
+In Alex: Yay, I got a seat!
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Alex: got GETUP
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = MARCHING, Command is: SIT
+In Alex: got SIT
+In Alex: asked for seat 2
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SEEKING, Command is: ACK
+In Alex: got ACK
+In Alex: Yay, I got a seat!
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Alex: got GETUP
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = MARCHING, Command is: SIT
+In Alex: got SIT
+In Alex: asked for seat 3
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SEEKING, Command is: ACK
+In Alex: got ACK
+In Alex: Yay, I got a seat!
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Alex: got GETUP
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = MARCHING, Command is: SIT
+In Alex: got SIT
+In Alex: asked for seat 0
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SEEKING, Command is: ACK
+In Alex: got ACK
+In Alex: Yay, I got a seat!
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Alex: got GETUP
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = MARCHING, Command is: SIT
+In Alex: got SIT
+In Alex: asked for seat 1
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SEEKING, Command is: ACK
+In Alex: got ACK
+In Alex: Yay, I got a seat!
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Alex: got GETUP
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = MARCHING, Command is: SIT
+In Alex: got SIT
+In Alex: asked for seat 0
+
+In Alex: reading from mom
+In Alex: done reading from mom
+State = SEEKING, Command is: QUIT
+Alex: I'm out of the game :(
+
+
+---------------------------------------------------------------
+Normal termination.
+
+---------------------------------------------------------------
+	Ehis
+	CSCI 4547
+	Sun Jan 17 2021	16:34:39
+---------------------------------------------------------------
+Command: kid lexy.local Noc 
+client socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 1234
+	}
+Connected on clientSock: 3
+kid: connection established to lexy.local.
+In Noc: writing to mom
+In Noc: mom knows my name!
+
+Taking a quick nap
+Done sleeping
+
+In Noc: reading from mom
+In Noc: done reading from mom
+State = NEWBIE, Command is: GETUP
+==============================
+In Noc: got GETUP
+
+In Noc: reading from mom
+In Noc: done reading from mom
+State = MARCHING, Command is: SIT
+In Noc: got SIT
+In Noc: asked for seat 7
+
+In Noc: reading from mom
+In Noc: done reading from mom
+State = SEEKING, Command is: NACK
+In Noc: got NACK
+In Noc: asked for seat 8
+
+In Noc: reading from mom
+In Noc: done reading from mom
+State = SEEKING, Command is: ACK
+In Noc: got ACK
+In Noc: Yay, I got a seat!
+
+In Noc: reading from mom
+In Noc: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Noc: got GETUP
+
+In Noc: reading from mom
+In Noc: done reading from mom
+State = MARCHING, Command is: SIT
+In Noc: got SIT
+In Noc: asked for seat 1
+
+In Noc: reading from mom
+In Noc: done reading from mom
+State = SEEKING, Command is: ACK
+In Noc: got ACK
+In Noc: Yay, I got a seat!
+
+In Noc: reading from mom
+In Noc: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Noc: got GETUP
+
+In Noc: reading from mom
+In Noc: done reading from mom
+State = MARCHING, Command is: SIT
+In Noc: got SIT
+In Noc: asked for seat 0
+
+In Noc: reading from mom
+In Noc: done reading from mom
+State = SEEKING, Command is: NACK
+In Noc: got NACK
+In Noc: asked for seat 5
+
+In Noc: reading from mom
+In Noc: done reading from mom
+State = SEEKING, Command is: NACK
+In Noc: got NACK
+In Noc: asked for seat 6
+
+In Noc: reading from mom
+In Noc: done reading from mom
+State = SEEKING, Command is: QUIT
+Noc: I'm out of the game :(
+
+
+---------------------------------------------------------------
+Normal termination.
+
+---------------------------------------------------------------
+	Ehis
+	CSCI 4547
+	Sun Jan 17 2021	16:34:33
+---------------------------------------------------------------
+Command: kid lexy.local Ronald 
+client socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 1234
+	}
+Connected on clientSock: 3
+kid: connection established to lexy.local.
+In Ronald: writing to mom
+In Ronald: mom knows my name!
+
+Taking a quick nap
+Done sleeping
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = NEWBIE, Command is: GETUP
+==============================
+In Ronald: got GETUP
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = MARCHING, Command is: SIT
+In Ronald: got SIT
+In Ronald: asked for seat 1
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = SEEKING, Command is: NACK
+In Ronald: got NACK
+In Ronald: asked for seat 2
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = SEEKING, Command is: ACK
+In Ronald: got ACK
+In Ronald: Yay, I got a seat!
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Ronald: got GETUP
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = MARCHING, Command is: SIT
+In Ronald: got SIT
+In Ronald: asked for seat 3
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = SEEKING, Command is: ACK
+In Ronald: got ACK
+In Ronald: Yay, I got a seat!
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Ronald: got GETUP
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = MARCHING, Command is: SIT
+In Ronald: got SIT
+In Ronald: asked for seat 2
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = SEEKING, Command is: ACK
+In Ronald: got ACK
+In Ronald: Yay, I got a seat!
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Ronald: got GETUP
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = MARCHING, Command is: SIT
+In Ronald: got SIT
+In Ronald: asked for seat 3
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = SEEKING, Command is: NACK
+In Ronald: got NACK
+In Ronald: asked for seat 0
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = SEEKING, Command is: ACK
+In Ronald: got ACK
+In Ronald: Yay, I got a seat!
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Ronald: got GETUP
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = MARCHING, Command is: SIT
+In Ronald: got SIT
+In Ronald: asked for seat 2
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = SEEKING, Command is: NACK
+In Ronald: got NACK
+In Ronald: asked for seat 4
+
+In Ronald: reading from mom
+In Ronald: done reading from mom
+State = SEEKING, Command is: QUIT
+Ronald: I'm out of the game :(
+
+
+---------------------------------------------------------------
+Normal termination.
+
+---------------------------------------------------------------
+	Ehis
+	CSCI 4547
+	Sun Jan 17 2021	16:34:28
+---------------------------------------------------------------
+Command: kid lexy.local John 
+client socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 1234
+	}
+Connected on clientSock: 3
+kid: connection established to lexy.local.
+In John: writing to mom
+In John: mom knows my name!
+
+Taking a quick nap
+Done sleeping
+
+In John: reading from mom
+In John: done reading from mom
+State = NEWBIE, Command is: GETUP
+==============================
+In John: got GETUP
+
+In John: reading from mom
+In John: done reading from mom
+State = MARCHING, Command is: SIT
+In John: got SIT
+In John: asked for seat 3
+
+In John: reading from mom
+In John: done reading from mom
+State = SEEKING, Command is: ACK
+In John: got ACK
+In John: Yay, I got a seat!
+
+In John: reading from mom
+In John: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In John: got GETUP
+
+In John: reading from mom
+In John: done reading from mom
+State = MARCHING, Command is: SIT
+In John: got SIT
+In John: asked for seat 0
+
+In John: reading from mom
+In John: done reading from mom
+State = SEEKING, Command is: ACK
+In John: got ACK
+In John: Yay, I got a seat!
+
+In John: reading from mom
+In John: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In John: got GETUP
+
+In John: reading from mom
+In John: done reading from mom
+State = MARCHING, Command is: SIT
+In John: got SIT
+In John: asked for seat 0
+
+In John: reading from mom
+In John: done reading from mom
+State = SEEKING, Command is: NACK
+In John: got NACK
+In John: asked for seat 2
+
+In John: reading from mom
+In John: done reading from mom
+State = SEEKING, Command is: NACK
+In John: got NACK
+In John: asked for seat 6
+
+In John: reading from mom
+In John: done reading from mom
+State = SEEKING, Command is: ACK
+In John: got ACK
+In John: Yay, I got a seat!
+
+In John: reading from mom
+In John: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In John: got GETUP
+
+In John: reading from mom
+In John: done reading from mom
+State = MARCHING, Command is: SIT
+In John: got SIT
+In John: asked for seat 4
+
+In John: reading from mom
+In John: done reading from mom
+State = SEEKING, Command is: NACK
+In John: got NACK
+In John: asked for seat 0
+
+In John: reading from mom
+In John: done reading from mom
+State = SEEKING, Command is: NACK
+In John: got NACK
+In John: asked for seat 1
+
+In John: reading from mom
+In John: done reading from mom
+State = SEEKING, Command is: QUIT
+John: I'm out of the game :(
+
+
+---------------------------------------------------------------
+Normal termination.
+
+---------------------------------------------------------------
+	Ehis
+	CSCI 4547
+	Sun Jan 17 2021	16:34:19
+---------------------------------------------------------------
+Command: kid lexy.local Ehis 
+client socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 1234
+	}
+Connected on clientSock: 3
+kid: connection established to lexy.local.
+In Ehis: writing to mom
+In Ehis: mom knows my name!
+
+Taking a quick nap
+Done sleeping
+
+In Ehis: reading from mom
+In Ehis: done reading from mom
+State = NEWBIE, Command is: GETUP
+==============================
+In Ehis: got GETUP
+
+In Ehis: reading from mom
+In Ehis: done reading from mom
+State = MARCHING, Command is: SIT
+In Ehis: got SIT
+In Ehis: asked for seat 4
+
+In Ehis: reading from mom
+In Ehis: done reading from mom
+State = SEEKING, Command is: NACK
+In Ehis: got NACK
+In Ehis: asked for seat 3
+
+In Ehis: reading from mom
+In Ehis: done reading from mom
+State = SEEKING, Command is: NACK
+In Ehis: got NACK
+In Ehis: asked for seat 2
+
+In Ehis: reading from mom
+In Ehis: done reading from mom
+State = SEEKING, Command is: NACK
+In Ehis: got NACK
+In Ehis: asked for seat 6
+
+In Ehis: reading from mom
+In Ehis: done reading from mom
+State = SEEKING, Command is: QUIT
+Ehis: I'm out of the game :(
+
+
+---------------------------------------------------------------
+Normal termination.
+
+---------------------------------------------------------------
+	Ehis
+	CSCI 4547
+	Sun Jan 17 2021	16:34:08
+---------------------------------------------------------------
+Command: kid lexy.local Alice 
+client socket is  {
+	sin_family        = 2
+	sin_addr.s_addr   = 127.0.0.1
+	sin_port          = 1234
+	}
+Connected on clientSock: 3
+kid: connection established to lexy.local.
+In Alice: writing to mom
+In Alice: mom knows my name!
+
+Taking a quick nap
+Done sleeping
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = NEWBIE, Command is: GETUP
+==============================
+In Alice: got GETUP
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = MARCHING, Command is: SIT
+In Alice: got SIT
+In Alice: asked for seat 1
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SEEKING, Command is: ACK
+In Alice: got ACK
+In Alice: Yay, I got a seat!
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Alice: got GETUP
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = MARCHING, Command is: SIT
+In Alice: got SIT
+In Alice: asked for seat 5
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SEEKING, Command is: ACK
+In Alice: got ACK
+In Alice: Yay, I got a seat!
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Alice: got GETUP
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = MARCHING, Command is: SIT
+In Alice: got SIT
+In Alice: asked for seat 1
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SEEKING, Command is: ACK
+In Alice: got ACK
+In Alice: Yay, I got a seat!
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Alice: got GETUP
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = MARCHING, Command is: SIT
+In Alice: got SIT
+In Alice: asked for seat 3
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SEEKING, Command is: NACK
+In Alice: got NACK
+In Alice: asked for seat 1
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SEEKING, Command is: ACK
+In Alice: got ACK
+In Alice: Yay, I got a seat!
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Alice: got GETUP
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = MARCHING, Command is: SIT
+In Alice: got SIT
+In Alice: asked for seat 3
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SEEKING, Command is: NACK
+In Alice: got NACK
+In Alice: asked for seat 4
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SEEKING, Command is: ACK
+In Alice: got ACK
+In Alice: Yay, I got a seat!
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Alice: got GETUP
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = MARCHING, Command is: SIT
+In Alice: got SIT
+In Alice: asked for seat 3
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SEEKING, Command is: NACK
+In Alice: got NACK
+In Alice: asked for seat 1
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SEEKING, Command is: ACK
+In Alice: got ACK
+In Alice: Yay, I got a seat!
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SITTING, Command is: GETUP
+==============================
+In Alice: got GETUP
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = MARCHING, Command is: SIT
+In Alice: got SIT
+In Alice: asked for seat 1
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SEEKING, Command is: NACK
+In Alice: got NACK
+In Alice: asked for seat 2
+
+In Alice: reading from mom
+In Alice: done reading from mom
+State = SEEKING, Command is: QUIT
+Alice: I'm out of the game :(
+
+
+---------------------------------------------------------------
+Normal termination.
+
