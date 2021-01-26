@@ -2,9 +2,9 @@
 A repo for CSCI 4547 (Systems programming) during fall 2020.
 
 Three main projects under this repo:
-* File sniffer
-* Musical threads
-* Musical sockets
+* [File sniffer](#file-sniffer)
+* [Musical threads](#musical-threads)
+* [Musical sockets](#musical-sockets)
 
 
 ### [FILE SNIFFER](file_sniffer/)
