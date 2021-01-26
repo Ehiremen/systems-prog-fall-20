@@ -9,6 +9,6 @@ Three main projects under this repo:
 
 ### [FILE SNIFFER](file_sniffer/)
 
-### MUSICAL THREADS
+### [MUSICAL THREADS](musical_threads/)
 
-### MUSICAL SOCKETS
+### [MUSICAL SOCKETS](musical_sockets/)
