@@ -5,3 +5,10 @@ Three main projects under this repo:
 * File sniffer
 * Musical threads
 * Musical sockets
+
+
+### [FILE SNIFFER](file_sniffer/)
+
+### MUSICAL THREADS
+
+### MUSICAL SOCKETS
